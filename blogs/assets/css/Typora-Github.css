@@ -1046,12 +1046,13 @@ mjx-container {
     break-inside: avoid;
 }
 
+
 :root {
     --side-bar-bg-color: #fafafa;
     --control-text-color: #777;
 }
 
-@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
 
 /* open-sans-regular - latin-ext_latin */
 /* open-sans-italic - latin-ext_latin */
@@ -1161,7 +1162,23 @@ h2 {
     border-bottom: 1px solid #eee;
 }
 
-/*@media print { .typora-export h1, .typora-export h2 { border-bottom: none; padding-bottom: initial; } .typora-export h1::after, .typora-export h2::after { content: ""; display: block; height: 100px; margin-top: -96px; border-top: 1px solid #eee; } }*/
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
 h3 {
     font-size: 1.5em;
     line-height: 1.43;
@@ -1305,6 +1322,7 @@ code {
     padding-bottom: 6px;
 }
 
+
 .md-task-list-item>input {
     margin-left: -1.3em;
 }
@@ -1423,7 +1441,10 @@ footer {
     color: #b4654d;
 }
 
-/*.html-for-mac { --item-hover-bg-color: #E6F0FE; }*/
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
 #md-notification .btn {
     border: 0;
 }
