@@ -14,13 +14,13 @@
 
 在 Treble Check 中查看 CPU 体系架构部分。可见，我的设备所使用的CPU是 64 位 ARM 。所以我的设备应当选用标记为 "arm64" 的 GSI 。
 
-![CPU Architecture](D:\Documents\GitHub\yzyf1312.github.io\assets\pics\Treble Check\alioth\CPU Architecture.png)
+![CPU Architecture](https://yzyf1312.github.io/assets/pics/Treble%20Check/alioth/CPU%20Architecture.png)
 
 ### {a|b}
 
 请查看 System-as-root 部分。如果显示支持，则设备的分区类型是 AB ，但为了方便起见，开发者往往将 GSI 标记为 "b" 。如果显示不支持，那么设备的分区类型是 Aonly ，此时选择被标记为 "a" 的 GSI 。可见，我的设备支持 System-as-root ，所以我的设备应当选用标记为 "b" 的 GSI 。
 
-![System-as-root](D:\Documents\GitHub\yzyf1312.github.io\assets\pics\Treble Check\alioth\System-as-root.png)
+![System-as-root](https://yzyf1312.github.io/assets/pics/Treble Check/alioth/System-as-root.png)
 
 ### {v|g}
 
@@ -34,7 +34,7 @@
 
 你必须在 {vndklite|secure|personal} 中作选择。首先，转到 Treble Check 应用程序并查看 Project Treble 部分。在这里可以看到设备是否支持 [VNDK](https://source.android.google.cn/docs/core/architecture/vndk?hl=zh-cn) 。从技术上讲， "vndklite" 适用于 VNDKLite 设备或非 vndklite 设备上的可读写系统。可见，我的设备支持 Project Treble ，所以我的设备应当选用标记为 "vndklite" 的 GSI 。
 
-![Project Treble](D:\Documents\GitHub\yzyf1312.github.io\assets\pics\Treble Check\alioth\Project Treble.png)
+![Project Treble](https://yzyf1312.github.io/assets/pics/Treble Check/alioth/Project Treble.png)
 
 # 题外话
 
