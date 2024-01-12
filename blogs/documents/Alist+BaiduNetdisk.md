@@ -1,0 +1,55 @@
+# [Alist](https://alist.nn.ci/)中百度网盘无法下载
+
+### 解决思路
+
+更改UA为 *netdisk* 以通过服务器校验
+
+### 解决方案
+
+#### 如果你是用户
+
+以 [Chrome](https://www.google.cn/chrome/) 为例
+
+- 按下 F12 进入 DevTools 
+
+- 按下 Ctrl+Shift+M 进入设备仿真
+
+- 在网页上方出现的顶栏中点击 "尺寸" 一项，并点击 "修改..."
+
+- 在新出现的页面中点击 "添加自定义设备..."
+
+- 在 "用户代理字符串" 处输入 netdisk ，设备名称和分辨率全凭个人喜好，然后点击添加以保存配置
+
+- *确保新配置的复选框处于选中状态*
+- 回到网页上方的顶栏，将 "尺寸" 一项更改为新的配置
+
+- 随后刷新网页即可开始下载
+
+
+**Tips**
+
+完成配置后每次报错只需要依次按下 F12, Ctrl+Shift+M 并保证尺寸为新配置，然后刷新即可。或者你也可以提醒服务器的管理者阅读本文
+
+#### 如果你是服务器的管理者
+
+请开启代理以减少用户的时间花销，优化用户体验。
+
+```
+注意
+使用Web代理意味着由代理服务器先下载一边文件，再上传一次文件。这相当占用带宽资源。
+```
+
+本文介绍 [alist-proxy](https://github.com/alist-org/alist-proxy) 作为代理示例。*所有的[]均为需填充内容，[]无需填入;所有的{}均为注释，无需填入*
+
+- 在 Github 下载好可执行文件后解压至你想要的工作目录
+- 更换用户至 root 或全程使用 sudo 执行
+- 启动程序
+  - https方式
+    - ./alist-proxy -address [需代理的 alist 域名] -cert [证书的路径] -https{启用https} -key [证书key的路径] -token [Alist token]
+  - http方式
+    - ./alist-proxy -address [需代理的 alist 域名] -token [Alist token]
+  - alist-proxy 默认监听 5244 端口。如需更改，请在启动时添加 -port [端口号]
+
+**Alist token是什么？怎么获取？**
+
+在 Alist管理页面 > 设置 > 其他 可以找到令牌（Token）
