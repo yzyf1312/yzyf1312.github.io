@@ -14,6 +14,8 @@
 
 - [这是一个引用了网络视频的markdown范例](blogs/pages/这是一个引用了网络视频的markdown范例.html)
 
+- [Alist+BaiduNetdisk](blogs/pages/Alist+BaiduNetdisk.html)
+
 ------
 
 ### [学习](./study/list)
