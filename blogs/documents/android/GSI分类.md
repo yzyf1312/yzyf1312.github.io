@@ -24,7 +24,7 @@
 
 ### {v|g}
 
-这里的 "v" 代表 Vanilla，这意味着没有 GApps [Google Apps、软件包、服务和框架] 。而 G 表示此 GSI 内置 Google Apps 中。这完全是个人选择，如果你需要 Google Apps，那么请选择 "g" 版本。
+这里的 "v" 代表 Vanilla，这意味着没有 GApps [Google Apps、软件包、服务和框架] 。而 G 表示此 GSI 内置 Google Apps 。这完全是个人选择，如果你需要 Google Apps，那么请选择 "g" 版本。
 
 ### {N|S}
 
