@@ -4,3 +4,8 @@
 
 ### 微信
 
+![tenpay](https://yzyf1312.github.io/assets/svg/tenpay.svg)
+
+### 支付宝
+
+![alipay](D:\Windows\Documents\GitHub\yzyf1312.github.io\assets\svg\alipay.svg)
