@@ -31,6 +31,7 @@
 
 ### 分享
 
-- [Alist](cloud.html)
+- ~~[Alist](cloud.html)~~
+- 以上Alist因备案问题暂时停用，转用以下链接：[Alist](cloud-temp.html)
 - 123Pan
 - 百度网盘
