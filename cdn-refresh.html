@@ -8,13 +8,26 @@
     <link href='https://purge.jsdelivr.net/gh/yzyf1312/yzyf1312.github.io@main/assets/css/Typora-Github.css'
         rel='stylesheet' type='text/css' />
     <script>
-        fetch('https://purge.jsdelivr.net/gh/yzyf1312/yzyf1312.github.io@main/assets/css/Open-Sans.css')
+        fetch('https://purge.jsdelivr.net/gh/yzyf1312/Assets@main/file-list.json')
+
+        fetch('https://cdn.jsdelivr.net/gh/yzyf1312/Assets@main/file-list.json')
             .then(response => response.json())
             .then(data => {
-                console.log('Status:', data.status);
-                console.log('ID:', data.id);
+                let fileList = Object.values(data.file_list);
+                for (let i = 0; i < fileList.length; i++) {
+                    let filePath = fileList[i];
+                    fetch(filePath)
+                        .then(response => response.json())
+                        .then(innerData => {
+                            console.log(`第 ${i + 1} 个路径：${filePath}`);
+                            console.log('Status:', innerData.status);
+                            console.log('ID:', innerData.id);
+                        })
+                        .catch(error => console.error(error));
+                }
             })
-            .catch(error => console.error(error));</script>
+            .catch(error => console.error(error));
+    </script>
     <title>CDN-Refresh</title>
 </head>
 
