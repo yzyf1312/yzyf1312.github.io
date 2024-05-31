@@ -8,4 +8,4 @@
 
 ### 支付宝
 
-![alipay](D:\Windows\Documents\GitHub\yzyf1312.github.io\assets\svg\alipay.svg)
+![alipay](https://yzyf1312.github.io/assets/svg/alipay.svg)
