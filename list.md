@@ -16,6 +16,8 @@
 
 - [Alist+BaiduNetdisk](blogs/pages/Alist+BaiduNetdisk.html)
 
+- [研究参考](./Report-Reference/list-report.md)
+
 ------
 
 ### [学习](./study/list)

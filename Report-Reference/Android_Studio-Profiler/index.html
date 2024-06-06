@@ -1,0 +1,599 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>index</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='正文'><span>正文</span></h1><h3 id='android-studio-profiler-概述'><span>Android Studio Profiler 概述</span></h3><p><span>Android Studio Profiler 是一个强大的性能分析工具，它集成在 Android Studio 中，用于帮助开发者监控和优化应用的性能。Profiler 提供了实时的性能数据监测和分析，包括 CPU 使用情况、内存使用情况、网络活动和电池消耗等核心功能。通过这些功能，开发者可以获得应用运行时的详细性能指标，从而发现和解决性能问题，提高应用的质量和用户体验。</span></p><h3 id='profiler-的主要功能'><span>Profiler 的主要功能</span></h3><h4 id='cpu-分析'><span>CPU 分析</span></h4><p><span>CPU Profiler 可以显示应用程序的实时 CPU 使用情况和线程的活动。它允许开发者选择模式方法追踪或基于样本的追踪，并记录特定时间段内的 CPU 使用情况。通过分析 CPU 使用情况，开发者可以找出哪些部分的代码占用了过多的 CPU 资源，并进行优化。</span></p><h4 id='内存分析'><span>内存分析</span></h4><p><span>Memory Profiler 可以帮助开发者检测内存泄漏和其他内存问题。它允许开发者查看应用的内存分配和回收情况，以及垃圾回收事件。通过这些信息，开发者可以识别出哪些对象占用了大量内存，以及哪些对象导致了频繁的垃圾回收事件。</span></p><h4 id='网络分析'><span>网络分析</span></h4><p><span>Network Profiler 展示了时间线上的实时网络活动，显示了发出和收到的数据和当前的网络连接数量。开发者可以通过网络分析来优化网络请求的频率和大小，从而提高应用的响应速度和减少不必要的网络流量。</span></p><h4 id='电池分析'><span>电池分析</span></h4><p><span>Battery Profiling 可以帮助开发者了解应用对设备电池的影响。开发者可以查看应用的电量消耗情况，包括 CPU、屏幕、网络和位置服务等方面的电量消耗。通过这些信息，开发者可以发现应用程序的能耗瓶颈，并进行相应的优化。</span></p><h3 id='使用-profiler-的建议'><span>使用 Profiler 的建议</span></h3><p><span>在使用 Profiler 进行性能分析时，开发者应该关注应用程序的热点，即那些占用大量资源的部分。优化应用程序的热点代码可以显著提高应用程序的性能。此外，开发者可以使用多个设备进行测试，以发现应用程序的性能问题在不同设备上的差异。关注应用程序的电池消耗也很重要，优化应用程序的电池消耗可以延长设备的电池寿命，提高用户体验。</span></p><p><span>综上所述，Android Studio Profiler 是一个多功能的性能分析工具，它为开发者提供了丰富的数据和分析功能，帮助开发者优化应用性能，提升用户体验。</span></p><h2 id='深入研究'><strong><span>深入研究</span></strong></h2><h3 id='如何在android-studio中开启profiler'><strong><span>如何在Android Studio中开启Profiler?</span></strong></h3><h3 id='如何在android-studio中开启profiler-2'><span>如何在Android Studio中开启Profiler</span></h3><p><span>在Android Studio中开启Profiler的步骤如下：</span></p><ol><li><p><strong><span>打开Android Studio</span></strong><span>，并确保已经打开了你的项目。</span></p></li><li><p><strong><span>在底部的工具栏中</span></strong><span>，找到并点击&quot;Android Profiler&quot;选项卡，它位于&quot;Logcat&quot;和&quot;Device File Explorer&quot;之间。</span></p></li><li><p><strong><span>如果你想要进行高级分析</span></strong><span>，需要在运行配置中进行设置。点击&quot;Run&quot;菜单，选择&quot;Edit Configurations&quot;，在左侧的列表中选择&quot;app&quot;（或你的应用程序模块名称），在右侧的配置面板中，点击&quot;Profiler&quot;选项卡，将&quot;Enable advanced profiling&quot;复选框选中，点击&quot;Apply&quot;和&quot;OK&quot;按钮保存更改。</span></p></li><li><p><strong><span>启动应用程序</span></strong><span>，并将运行环境设置为&quot;Profile&quot;。在Android Studio的工具栏中点击&quot;Profiler&quot;图标，Profiler工具窗口会显示应用程序的性能数据和内存使用情况。</span></p></li><li><p><strong><span>点击&quot;Start&quot;按钮</span></strong><span>开始记录性能数据，在应用程序中执行相关操作，然后点击&quot;Stop&quot;按钮停止记录性能数据。</span></p></li><li><p><strong><span>分析性能数据</span></strong><span>，查找性能瓶颈和内存泄漏等问题。</span></p></li></ol><p><span>以上步骤基于最新的Android Studio版本，确保你的Android Studio是最新版本，以便能够使用所有最新的功能.</span></p><h3 id='android-studio-profiler支持哪些类型的性能分析'><strong><span>Android Studio Profiler支持哪些类型的性能分析?</span></strong></h3><h3 id='android-studio-profiler支持的性能分析类型'><span>Android Studio Profiler支持的性能分析类型</span></h3><p><span>Android Studio Profiler是一个集成在Android Studio中的性能分析工具，它支持以下几种类型的性能分析：</span></p><ol><li><p><strong><span>CPU分析</span></strong><span>：通过CPU分析，开发者可以识别出哪些方法或函数占用了最多的CPU时间，从而优化代码以提高执行效率。</span></p></li><li><p><strong><span>内存分析</span></strong><span>：内存分析有助于发现内存泄漏和其他内存使用问题。开发者可以查看堆转储、对象分配和内存使用趋势等信息。</span></p></li><li><p><strong><span>网络分析</span></strong><span>：网络分析可以帮助开发者了解应用的网络性能，包括请求数量、传输的数据量和延迟等。</span></p></li><li><p><strong><span>电池分析</span></strong><span>：电池分析可以帮助开发者了解应用的电池使用情况，包括哪些操作最耗电，从而优化代码以降低电池消耗。</span></p></li></ol><p><span>这些分析类型可以单独使用，也可以组合使用，以全面评估应用的性能表现。通过这些分析，开发者可以更准确地识别和解决性能瓶颈，优化应用性能，提升用户体验。</span></p><h3 id='如何解读android-studio-profiler收集到的性能数据'><strong><span>如何解读Android Studio Profiler收集到的性能数据?</span></strong></h3><h3 id='如何解读android-studio-profiler收集到的性能数据-2'><span>如何解读Android Studio Profiler收集到的性能数据</span></h3><p><span>Android Studio Profiler是一个强大的工具，它可以帮助开发者深入了解应用的性能表现，包括CPU、内存和网络使用情况。以下是如何解读Profiler收集到的性能数据的基本步骤：</span></p><h4 id='1-打开profiler窗口'><span>1. 打开Profiler窗口</span></h4><p><span>在Android Studio中，通过点击View &gt; Tool Windows &gt; Android Profiler或使用工具栏中的Profiler按钮打开Profiler窗口。选择要分析的设备和应用进程。</span></p><h4 id='2-查看共享时间线视图'><span>2. 查看共享时间线视图</span></h4><p><span>Profiler窗口顶部显示了一个共享时间线视图，其中包含了CPU、内存和网络使用的实时图。这个视图还包括时间轴缩放控制按钮、跳转到实时更新的按钮，以及显示活动状态、用户输入事件和屏幕旋转事件的事件时间轴。</span></p><h4 id='3-分析cpu使用情况'><span>3. 分析CPU使用情况</span></h4><p><span>在Profiler的顶部菜单中选择“CPU”选项卡，这里会显示应用的CPU使用情况，包括每个线程的CPU使用率、方法调用堆栈等信息。通过CPU分析，可以查看应用的线程使用情况，如果某个线程的CPU使用率过高，可能存在性能瓶颈。</span></p><h4 id='4-分析内存使用情况'><span>4. 分析内存使用情况</span></h4><p><span>选择“Memory”选项卡，这里会显示应用的内存使用情况，包括总内存、已用内存、空闲内存等信息。点击“Heap Dump”按钮可以获取当前的堆快照，通过分析堆快照，可以查看哪些对象占用了最多的内存，以及是否存在内存泄漏。</span></p><h4 id='5-分析网络使用情况'><span>5. 分析网络使用情况</span></h4><p><span>在Profiler的顶部菜单中选择“Network”选项卡，这里会显示应用的网络使用情况，包括所有传输的文件的详情。</span></p><h4 id='6-高级分析功能'><span>6. 高级分析功能</span></h4><p><span>为了获得更详细的分析数据，可以在运行配置中启用高级分析。这要求在应用中插入监控逻辑，以便Profiler能够收集更详细的数据，如分配对象数量、垃圾回收事件等。</span></p><h4 id='7-解读数据'><span>7. 解读数据</span></h4><p><span>在分析数据时，注意观察峰值和趋势，这些通常指示着性能问题的所在。例如，CPU使用率的突然上升可能表明有计算密集型的任务正在执行，而内存使用量的持续增长可能意味着存在内存泄漏。</span></p><p><span>通过上述步骤，你可以有效地使用Android Studio Profiler来诊断和优化你的应用性能。记住，定期进行性能分析是确保应用流畅运行和提供良好用户体验的关键步骤。</span></p><hr /><h1 id='大纲'><span>大纲</span></h1><p><span>使用方法</span></p><ul><li><p><span>连接设备或启动模拟器</span></p></li><li><p><span>在Android Studio中选择 &quot;View &gt; Tool Windows &gt; Android Profiler&quot;</span></p></li><li><p><span>选择监测的设备和应用进程</span></p></li><li><p><span>使用不同维度的数据图表分析性能</span></p></li></ul><p><span>数据图表</span></p><ul><li><p><span>Call Chart：显示方法调用关系</span></p></li><li><p><span>Flame Chart：显示方法调用和执行时间</span></p></li><li><p><span>Top Down Tree：按层次结构显示调用栈</span></p></li><li><p><span>Bottom Up Tree：逆向构建调用栈</span></p></li></ul><p><span>性能优化建议</span></p><ul><li><p><span>CPU优化：减少计算、使用高效算法、合理管理线程</span></p></li><li><p><span>内存优化：及时释放资源、避免内存泄漏、使用缓存</span></p></li><li><p><span>网络优化：缓存常用数据、减少网络请求</span></p></li></ul><p><span>实际案例分析</span></p><ul><li><p><span>内存泄露问题诊断与解决</span></p></li><li><p><span>函数执行时间分析</span></p></li><li><p><span>网络请求性能分析</span></p></li></ul><p><span>Android Profiler 工具概述</span></p><ul><li><p><span>Android Studio内置性能分析工具</span></p></li><li><p><span>监控CPU、内存、网络和电池消耗</span></p></li><li><p><span>实时数据显示和历史记录分析</span></p></li></ul><p><span>性能分析与优化</span></p><ul><li><p><span>CPU性能分析：识别热点代码，优化CPU占用率高的代码块</span></p></li><li><p><span>内存性能分析：检测内存泄漏，优化内存使用效率</span></p></li><li><p><span>网络性能分析：监控网络请求，优化网络性能</span></p></li><li><p><span>电池性能分析：评估应用对设备电量的影响，优化能耗</span></p></li></ul><hr /><h1 id='思维导图'><span>思维导图</span></h1><p><img src="./Mind-Map.svg" referrerpolicy="no-referrer" alt="Mind-Map"></p></div></div>
+</body>
+</html>
