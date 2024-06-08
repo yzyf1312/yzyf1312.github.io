@@ -35,3 +35,9 @@
 
 - [Alist](cloud.html)
 - [百度网盘](https://pan.baidu.com/s/17ampTbUfmDwpt72gruV8eQ?pwd=yf07)
+
+------
+
+### 文档
+
+- [Apktool Docs cn](https://yfstudio.gitbook.io/apktool-docs-cn)
