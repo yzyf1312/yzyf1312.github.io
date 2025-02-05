@@ -5,4 +5,4 @@
 
 本站 Markdown 文本主要使用 [Typora](https://typora.io/) 完成操作。
 
-关于本站页面结构可在[本站 github 页面](https://github.com/yzyf1312/yzyf1312.github.io)查看。什么？你说打不开？看看 jsdelivr 怎么用吧。
+关于本站页面结构可在[本站 github 页面](https://github.com/yzyf1312/yzyf1312.github.io)查看。什么？你说打不开？看看 [jsdelivr 的版本](https://cdn.jsdelivr.net/gh/yzyf1312/yzyf1312.github.io@latest/)怎么样？
