@@ -192,4 +192,4 @@ ff.Add(1, 2): 3
 
 - [Releases · llvm/llvm-project](https://github.com/llvm/llvm-project/releases)
 - [All releases - The Go Programming Language](https://go.dev/dl/)
-- [Archive | Flutter](https://docs.flutter.dev/release/archive)
+- [Archive - Flutter](https://docs.flutter.dev/release/archive)
