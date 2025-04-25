@@ -1,4 +1,4 @@
-# 正文
+# GSI 分类
 
 本文将解释应如何在 [GSI](https://developer.android.google.cn/topic/generic-system-image) 的诸多分类 (arm64/a64/bgn/bvn/bgs/vndklite) 中做出选择。
 
