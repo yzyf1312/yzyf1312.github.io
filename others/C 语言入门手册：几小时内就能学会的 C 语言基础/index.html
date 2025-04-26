@@ -1,0 +1,3623 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+    <meta name="referrer" content="never">
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://yzyf1312.github.io/others/C%20%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8%E6%89%8B%E5%86%8C%EF%BC%9A%E5%87%A0%E5%B0%8F%E6%97%B6%E5%86%85%E5%B0%B1%E8%83%BD%E5%AD%A6%E4%BC%9A%E7%9A%84%20C%20%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">
+      
+      
+        <link rel="prev" href="../../blogs/android/%E5%AE%89%E5%8D%93%E7%8E%A9%E6%9C%BA%E6%89%AB%E7%9B%B2/">
+      
+      
+        <link rel="next" href="../WSAppBak%E9%A1%BB%E7%9F%A5/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+
+    
+      
+        <title>C 语言入门手册：几小时内就能学会的 C 语言基础 - yzyf1312.github.io</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#c-c" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="yzyf1312.github.io" class="md-header__button md-logo" aria-label="yzyf1312.github.io" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            yzyf1312.github.io
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              C 语言入门手册：几小时内就能学会的 C 语言基础
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="yzyf1312.github.io" class="md-nav__button md-logo" aria-label="yzyf1312.github.io" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    yzyf1312.github.io
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    yzyf1312.github.io
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Markdown%20%E6%B5%8B%E8%AF%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Markdown 测试
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Blogs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Blogs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/Alist%2BBaiduNetdisk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Alist中百度网盘无法下载
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/PotPlayer%20%E7%9A%AE%E8%82%A4%E6%8E%A8%E8%8D%90%202024.09.08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PotPlayer 皮肤推荐 2024.09.08
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/%E5%A4%A7%E5%AD%A6%E6%95%99%E8%82%B2%E4%B8%AD%E7%9A%84%E6%96%AD%E5%B1%82%E9%97%AE%E9%A2%98%EF%BC%9A%E7%BB%93%E6%9E%84%E6%80%A7%E6%8C%91%E6%88%98%E4%B8%8E%E5%AF%B9%E7%AD%96%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    大学教育中的断层问题：结构性挑战与对策分析
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    计算机专业学习指南
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Code
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Code
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/Code/Dart%20%26%20Flutter%20%E5%BC%80%E5%8F%91%E5%BF%83%E5%BE%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dart &amp; Flutter 开发心得
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/Code/Dart%20%26%20Flutter%20%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dart &amp; Flutter 镜像加速配置
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/Code/Dart%20%26%20Flutter%20%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dart &amp; Flutter 项目结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/Code/Dart%20%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dart 使用动态链接库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/Code/Go%20%E5%BC%80%E5%8F%91%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Go 开发镜像加速指南
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/Code/Go%20%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Go 项目结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/Code/Rust%20%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rust 开发踩坑笔记
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/Code/Rust%20%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rust 项目结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/Code/w64devkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    为什么选择 w64devkit？一款轻量高效的 Windows C/C++ 开发工具链
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Computer
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Computer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_1" id="__nav_3_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Linux
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/Computer/Linux/Ubuntu%20%E9%95%9C%E5%83%8F%E6%BA%90%E6%9B%B4%E6%8D%A2%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ubuntu 镜像源更换指南
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_2" id="__nav_3_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Windows
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Windows
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/Computer/Windows/Dism%2B%2B%20%E6%8E%A8%E8%8D%90%E7%94%A8%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dism++ 推荐用法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/Computer/Windows/WSA%20%E6%9D%82%E8%B0%88/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WSA 杂谈
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/Computer/Windows/about-WSL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    关于 WSL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/Computer/Windows/%E5%9F%BA%E4%BA%8E%20Kitsune%20Mask%20%E7%9A%84%20WSA%20Root%20%E6%96%B9%E6%A1%88/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    基于 Kitsune Mask 的 WSA Root 方案
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Essay
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Essay
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/Essay/%E6%95%B0%E5%AD%97%E6%97%B6%E4%BB%A3%E7%9A%84%E5%B0%8A%E4%B8%A5%E6%8D%8D%E5%8D%AB%E8%80%85%EF%BC%9A%E6%8B%92%E7%BB%9D%E8%A2%AB%E6%95%B0%E6%8D%AE%E7%BB%91%E6%9E%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    数字时代的尊严捍卫者：拒绝被数据绑架
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/Essay/%E9%9A%8F%E7%AC%94%20%E2%80%93%202024.04.01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    随笔 – 2024.04.01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Android
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            Android
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/android/GSI%E5%88%86%E7%B1%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GSI 分类
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blogs/android/%E5%AE%89%E5%8D%93%E7%8E%A9%E6%9C%BA%E6%89%AB%E7%9B%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    安卓玩机扫盲
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Others
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Others
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    C 语言入门手册：几小时内就能学会的 C 语言基础
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    C 语言入门手册：几小时内就能学会的 C 语言基础
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      目录
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      C 语言简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      变量与类型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="变量与类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      整数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      无符号整数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      溢出的问题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      声明错误类型时的警告
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      浮点数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      常量
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      运算符
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="运算符">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      算术运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      比较运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      逻辑运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      复合赋值运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      三目运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sizeof" class="md-nav__link">
+    <span class="md-ellipsis">
+      sizeof
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      运算符优先级
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件语句
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="条件语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if" class="md-nav__link">
+    <span class="md-ellipsis">
+      if
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      switch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      循环
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="循环">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for" class="md-nav__link">
+    <span class="md-ellipsis">
+      For 循环
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#while" class="md-nav__link">
+    <span class="md-ellipsis">
+      while 循环
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-while" class="md-nav__link">
+    <span class="md-ellipsis">
+      Do while 循环
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#break" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用 break 跳出循环
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      数组
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      字符串
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      指针
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      函数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      输入与输出
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="输入与输出">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scanf" class="md-nav__link">
+    <span class="md-ellipsis">
+      scanf()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      变量作用域
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      静态变量
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      全局变量
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      类型定义
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      枚举类型
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      结构体
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      命令行参数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      头文件
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      预处理器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="预处理器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      符号常量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      宏
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-defined" class="md-nav__link">
+    <span class="md-ellipsis">
+      If defined
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      你可以使用的预定义的符号常量
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      结语
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WSAppBak%E9%A1%BB%E7%9F%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WSAppBak须知
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%85%B3%E4%BA%8E%E5%AF%BC%E6%95%B0%E7%9A%84%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    关于导数的知识整理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%97%B6%E9%97%B4%E8%83%B6%E5%9B%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    时间胶囊
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%AB%98%E4%B8%AD%E4%BD%9C%E6%81%AF%E6%97%B6%E9%97%B4%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    高中作息时间表
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      目录
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      C 语言简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      变量与类型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="变量与类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      整数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      无符号整数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      溢出的问题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      声明错误类型时的警告
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      浮点数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      常量
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      运算符
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="运算符">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      算术运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      比较运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      逻辑运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      复合赋值运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      三目运算符
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sizeof" class="md-nav__link">
+    <span class="md-ellipsis">
+      sizeof
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      运算符优先级
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件语句
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="条件语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if" class="md-nav__link">
+    <span class="md-ellipsis">
+      if
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      switch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      循环
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="循环">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for" class="md-nav__link">
+    <span class="md-ellipsis">
+      For 循环
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#while" class="md-nav__link">
+    <span class="md-ellipsis">
+      while 循环
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-while" class="md-nav__link">
+    <span class="md-ellipsis">
+      Do while 循环
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#break" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用 break 跳出循环
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      数组
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      字符串
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      指针
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      函数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      输入与输出
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="输入与输出">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scanf" class="md-nav__link">
+    <span class="md-ellipsis">
+      scanf()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      变量作用域
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      静态变量
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      全局变量
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      类型定义
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      枚举类型
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      结构体
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      命令行参数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      头文件
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      预处理器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="预处理器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      符号常量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      宏
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-defined" class="md-nav__link">
+    <span class="md-ellipsis">
+      If defined
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      你可以使用的预定义的符号常量
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      结语
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="c-c">C 语言入门手册：几小时内就能学会的 C 语言基础<a class="headerlink" href="#c-c" title="Permanent link">&para;</a></h1>
+<p>您可以访问 <a href="http://blog.yfstudio.online/?p=315">WordPress</a> 版本以获得不一样的体验。</p>
+<p><a href="https://www.freecodecamp.org/chinese/news/author/nicholas/">Nicholas Zhan</a></p>
+<p>本文转载自 <a href="https://www.freecodecamp.org/chinese/news/the-c-beginners-handbook/">freeCodeCamp</a> ，修正了部分错误。</p>
+<hr />
+<p><strong>本手册遵循二八定律。你将在 20% 的时间内学习 80% 的 C 编程语言。</strong></p>
+<p>这种方式将会让你对这门语言有一个全面的认识。</p>
+<p>本手册并不会尝试覆盖与 C 有关的一切。它只会关注这门语言的核心部分，尽量将更加复杂的主题简单化。</p>
+<p>提示：<a href="https://flaviocopes.com/page/c-handbook/">你可以从这里获得这本手册的 PDF 或 ePub 版本</a>。</p>
+<p>尽情享受吧！</p>
+<h2 id="_1">目录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li>C 语言简介</li>
+<li>变量与类型</li>
+<li>常量</li>
+<li>运算符</li>
+<li>条件语句</li>
+<li>循环</li>
+<li>数组</li>
+<li>字符串</li>
+<li>指针</li>
+<li>函数</li>
+<li>输入与输出</li>
+<li>变量作用域</li>
+<li>静态变量</li>
+<li>全局变量</li>
+<li>类型定义</li>
+<li>枚举类型</li>
+<li>结构体</li>
+<li>命令行参数</li>
+<li>头文件</li>
+<li>预处理器</li>
+<li>结语</li>
+</ol>
+<h2 id="c">C 语言简介<a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
+<p>C 可能是最广为人知的编程语言。它被全世界的计算机科学课程中用作参考语言，除了 Python 与 Java，它可能是人们在学校学得最多得编程语言。</p>
+<p>我记得它是我在 Pascal 之后的第二门编程语言。</p>
+<p>学生们用 C 来学习编程，但它的作用远不止这一点。它不是一门学术型语言。它不是最简单的语言，因为 C 是一门非常底层的编程语言。</p>
+<p>今天，C 在嵌入式设备中广泛使用，它驱动着绝大多数用 Linux 搭建的因特网服务器。Linux 内核是用 C 写的，这也意味着 C 驱动着所有安卓设备的内核。可以这么说，此时此刻，整个世界的一大部分就是由 C 代码运行的，令人惊叹。</p>
+<p>在诞生之初，C 被认为是一门高级语言，因为它可以在不同机器之间移植。如今，我们或多或少都认为在 Mac 或 Windows 或 Linux 运行一个程序（可能使用 Node.js 或 Python）是理所当然的。</p>
+<p>在以前，完全不是这样的。C 带来了一门易于实现的语言，它的编译器可以很容易地被移植到不同的机器上。</p>
+<p>我说下译器：C 是一门编译型语言，就像 Go、Java、Swift 或 Rust 一样。其它流行的语言，比如 Python、Ruby 或 JavaScript 都是解释型语言。编译型语言与解释型语言的差别是不变的：编译型语言生成的是可直接执行和分发的二进制文件。</p>
+<p>C 不支持垃圾收集（garbage collection），这意味着我们必须自己管理内存。管理内存是一项复杂的任务，需要十分小心才能预防缺陷，但 C 也因此成为了嵌入式设备（例如 Arduino）编程的理想语言。</p>
+<p>C 并不会隐藏下层机器的复杂性和能力。一旦知道你能做什么，你就能拥有巨大的能力。</p>
+<p>现在，我想介绍第一个 C 程序，我们将会管它叫“Hello, World”。</p>
+<p>hello.c</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>让我们描述一下这段程序源代码：我们首先导入了 <code>stdio</code> 库（<code>stdio</code> 表示的是标准输入输出库（standard input-output library））。</p>
+<p>这个库允许我们访问输入/输出函数。</p>
+<p>C 是一门内核非常小的语言，任何内核以外的部分都以库的形式提供。其中一些库由普通编程人员构建并供他人使用。另一些库被内置在编译器中，比如 <code>stdio</code> 等。</p>
+<p><code>stdio</code> 库提供了 <code>prinf()</code> 函数。</p>
+<p>这个函数被包裹在 <code>main()</code> 函数中，<code>main()</code> 函数是所有 C 程序的入口。</p>
+<p>但是，究竟什么是函数呢？</p>
+<p>函数（function）是一个例程，它接收一个或多个参数并返回一个值。</p>
+<p>在 <code>main()</code> 的例子中，函数没有参数，返回一个整数。我们使用 <code>void</code> 关键字标识该参数，使用 <code>int</code> 关键字标识返回值。</p>
+<p>函数有一个由花括号包裹的函数体，函数需要进行的所有操作的代码都在函数体内。</p>
+<p>如你所见，<code>printf()</code> 函数的写法稍有不同。它没有定义返回值，并且我们给它传入了一个用双引号包裹的字符串。我们并没有声明参数的类型。</p>
+<p>那是因为这是一个函数调用。在 <code>stdio</code> 库中的某个地方，<code>printf</code> 被定义成</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">printf</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span>
+</code></pre></div>
+<p>你现在不需要理解这是何含义，简单来说，这是就是函数定义。当我们调用 <code>printf("Hello, World!");</code> 时，这就是该函数运行的地方。</p>
+<p>我们在上面定义的 <code>main()</code> 函数：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>将会在程序被执行的时候由操作系统运行。</p>
+<p>我们如何执行一个 C 程序呢？</p>
+<p>如我所说，C 是一门编译型语言。要运行程序，我们必须先编译它。任何 Linux 或 macOS 计算机都自带了 C 编译器。至于 Windows，你可以使用适用于 Linux 的 Windows 子系统（WSL）。</p>
+<p>无论如何，你都可以在打开终端时输入 <code>gcc</code>，这个命令应该会返回一个错误，提示你没有声明任何文件：</p>
+<p><img alt="Screen-Shot-2020-01-29-at-10.10.50" src="https://i0.hdslb.com/bfs/new_dyn/3b6585bb5e4a8e2838c7349883e3dc5a549933280.png" /></p>
+<p>很好。它说明 C 编译器是有的，现在我们可以开始使用它了。</p>
+<p>现在将上面的程序输入到一个名为 <code>hello.c</code> 的文件中。你可以使用任何编辑器，不过为了简单起见，我将在命令行中使用 <code>nano</code> 编辑器：</p>
+<p><img alt="Screen-Shot-2020-01-29-at-10.11.39" src="https://i0.hdslb.com/bfs/new_dyn/afc2ca620fc69388fa6099999bd8fece549933280.png" /></p>
+<p>输入程序：</p>
+<p><img alt="Screen-Shot-2020-01-29-at-10.16.52" src="https://i0.hdslb.com/bfs/new_dyn/4a3ce8c40154c8f30f63971a97b30fe0549933280.png" /></p>
+<p>现在按 <code>ctrl-X</code> 退出：</p>
+<p><img alt="Screen-Shot-2020-01-29-at-10.18.11" src="https://i0.hdslb.com/bfs/new_dyn/4303b7d961d4b95f63db648182986d6c549933280.png" /></p>
+<p>按 <code>y</code> 键确认，然后按回车键确认文件名：</p>
+<p><img alt="Screen-Shot-2020-01-29-at-10.18.15" src="https://i0.hdslb.com/bfs/new_dyn/a66afa86427d90b0d44750d2e52e7995549933280.png" /></p>
+<p>就是这样，我们现在应该已经回到终端了：</p>
+<p><img alt="Screen-Shot-2020-01-29-at-10.13.46" src="https://i0.hdslb.com/bfs/new_dyn/0687fcf40303621eedabebe1ab8b4dac549933280.png" /></p>
+<p>现在输入</p>
+<div class="highlight"><pre><span></span><code>gcc<span class="w"> </span>hello.c<span class="w"> </span>-o<span class="w"> </span>hello
+</code></pre></div>
+<p>程序应该不会给你任何错误信息：</p>
+<p><img alt="Screen-Shot-2020-01-29-at-10.16.31" src="https://i0.hdslb.com/bfs/new_dyn/c9a17063dbacda19df198c485ba404cc549933280.png" /></p>
+<p>但是它应该已经生成了一个名为 <code>hello</code> 的可执行程序。现在输入</p>
+<div class="highlight"><pre><span></span><code>./hello
+</code></pre></div>
+<p>运行它：</p>
+<p><img alt="Screen-Shot-2020-01-29-at-10.19.20" src="https://i0.hdslb.com/bfs/new_dyn/71a7c9b63cee15015b755b346decb9c6549933280.png" /></p>
+<p>我在程序名的前面加了 <code>./</code>，告诉终端要执行的命令就在当前目录下。</p>
+<p>太棒了！</p>
+<p>现在，如果你调用 <code>ls -al hello</code>，你能看到这个程序只有 12KB 大：</p>
+<p><img alt="Screen-Shot-2020-01-29-at-10.19.55" src="https://i0.hdslb.com/bfs/new_dyn/1c07288d23ffe8fc61cab5f12fa950d2549933280.png" /></p>
+<p>这是 C 的优点之一：它是高度优化的，这也是它非常适用于资源非常有限的嵌入式设备的原因之一。</p>
+<h2 id="_2">变量与类型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>C 是一门静态类型语言。</p>
+<p>这意味着任何变量都有一个相关联的类型，并且该类型在编译时是可知的。</p>
+<p>这与你在 Python、JavaScript、PHP 和其它解释型语言中使用变量的方式大有不同。</p>
+<p>当你在 C 中创建变量时，你必须在声明中给出该变量的类型。</p>
+<p>在这个示例中，我们初始化一个 <code>int</code> 类型的变量 <code>age</code>：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+</code></pre></div>
+<p>变量名可以包含任意大写或小写字母，也可以包含数字和下划线，但是不能以数字开头。<code>AGE</code> 和 <code>Age10</code> 都是有效的变量名，但 <code>1age</code> 就不是了。</p>
+<p>你还可以在声明中初始化变量，给出初始值即可：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">37</span><span class="p">;</span>
+</code></pre></div>
+<p>变量一旦声明，你就可以在程序代码中使用它了。你在任何时候都可以使用 <code>=</code> 改变它的值，例如 <code>age = 100;</code>（提供的新值的类型与原值相同）。</p>
+<p>在这种情况下：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">37.2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%u&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>编译器会在编译时发出警告，然后将小数转为整数。</p>
+<p>C 的内置数据类型有 <code>int</code>、<code>char</code>、<code>short</code>、<code>long</code>、<code>float</code>、<code>double</code>、<code>long double</code>。咱们进一步了解这些数据类型吧。</p>
+<h3 id="_3">整数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>C 给我们提供了下列定义整数的类型：</p>
+<ul>
+<li><code>char</code></li>
+<li><code>int</code></li>
+<li><code>short</code></li>
+<li><code>long</code></li>
+</ul>
+<p>通常，你很可能会使用 <code>int</code> 保存整数。但是在某些情况下，你或许想在其它三个选项中选取合适的类型。</p>
+<p><code>char</code> 类型通常被用来保存 ASCII 表中的字母，但是它也可以用来保存 <code>-128</code> 到 <code>127</code> 之间的小整数。它占据至少一个字节。</p>
+<p><code>int</code> 占据至少两个字节。<code>short</code> 占据至少两个字节。<code>long</code> 占据至少四个字节。</p>
+<p>如你所见，我们并不保证不同环境下的值相同。我们只有一个指示。问题在于每种数据类型中所存储的具体值是由实现和系统架构决定的。</p>
+<p>我们保证 <code>short</code> 不会比 <code>int</code> 长。并且我们还保证 <code>long</code> 不会比 <code>int</code> 短。</p>
+<p>ANSI C 规范标准确定了每种类型的最小值，多亏了它，我们至少可以知道使用某个类型时可以期待的最小值。</p>
+<p>如果你正在 Arduino 上用 C 编程，不同的板子上的限制会有所不同。</p>
+<p>在 Arduino Uno 开发板上，<code>int</code> 占两个字节，范围从 <code>-32,768</code> 到 <code>32,767</code>。在 Arduino MKR 1010 上，<code>int</code> 占四个字节，范围从 <code>-2,147,483,648</code> 到 <code>2,147,483,647</code>。差异还真不小。</p>
+<p>在所有的 Arduino 开发板上，<code>short</code> 都占两个字节，范围从 <code>-32,768</code> 到 <code>32,767</code>。<code>long</code> 占四个字节，范围从 <code>-2,147,483,648</code> 到 <code>2,147,483,647</code>。</p>
+<h3 id="_4">无符号整数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>对于以上所有的数据类型，我们都可以在其前面追加一个 <code>unsigned</code>。这样一来，值的范围就不再从负数开始，而是从 0 开始。这在很多情况下是很有用的。</p>
+<ul>
+<li><code>unsigned char</code> 的范围从 <code>0</code> 开始，至少到 <code>255</code></li>
+<li><code>unsigned int</code> 的范围从 <code>0</code> 开始，至少到 <code>65,535</code></li>
+<li><code>unsigned short</code> 的范围从 <code>0</code> 开始，至少到 <code>65,535</code></li>
+<li><code>unsigned long</code> 的范围从 <code>0</code> 开始，至少到 <code>4,294,967,295</code></li>
+</ul>
+<h3 id="_5">溢出的问题<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>鉴于所有这些限制，可能会出现一个问题：我们如何确保数字不超过限制？如果超过了限制会怎样？</p>
+<p>如果你有一个值为 255 的 <code>unsigned int</code>，自增返回的值为 256，这在意料之中。如果你有一个值为 255 的 <code>unsigned char</code>，你得到的结果就是 0。它重置为了初始值。</p>
+<p>如果你有一个值为 255 的 <code>unsigned char</code>，给它加上 10 会得到数字 <code>9</code>：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">255</span><span class="p">;</span>
+<span class="w">  </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%u&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">);</span><span class="w"> </span><span class="cm">/* 9 */</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>If you don't have a signed value, the behavior is undefined.
+原文这里可能是 typo，从代码来看，这里描述的是有符号整数的溢出行为。</p>
+</blockquote>
+<p>如果你的值是有符号的，程序的行为则是未知的。程序基本上会给你一个很大的值，这个值可能变化，就像这样：</p>
+<div class="highlight"><pre><span></span><code><span class="n">include</span><span class="w"> </span><span class="o">&lt;</span><span class="n">stdio</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">127</span><span class="p">;</span>
+<span class="w">  </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%u&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">);</span><span class="w"> </span><span class="cm">/* 4294967177 */</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>换句话说，C 并不会在你超出类型的限制时保护你。对于这种情况，你需要自己当心。</p>
+<h3 id="_6">声明错误类型时的警告<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>如果你声明变量并用错误的值进行初始化，<code>gcc</code> 编译器（你可能正在使用这个编译器）应该会发出警告：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>hello.c:4:11:<span class="w"> </span>warning:<span class="w"> </span>implicit<span class="w"> </span>conversion<span class="w"> </span>
+<span class="w">  </span>from<span class="w"> </span><span class="s1">&#39;int&#39;</span><span class="w"> </span>to
+<span class="w">      </span><span class="s1">&#39;char&#39;</span><span class="w"> </span>changes<span class="w"> </span>value<span class="w"> </span>from<span class="w"> </span><span class="m">1000</span><span class="w"> </span>to<span class="w"> </span>-24
+<span class="w">      </span><span class="o">[</span>-Wconstant-conversion<span class="o">]</span>
+<span class="w">        </span>char<span class="w"> </span><span class="nv">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000</span><span class="p">;</span>
+<span class="w">             </span>~<span class="w">   </span>^~
+<span class="m">1</span><span class="w"> </span>warning<span class="w"> </span>generated.
+</code></pre></div>
+<p>如果你直接赋值，也会有警告：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">j</span><span class="p">;</span>
+<span class="w">  </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>但是对值进行增加操作（例如，使用 <code>+=</code>）就不会有警告：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="n">j</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="_7">浮点数<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>浮点类型可以表示的数值范围比整数大得多，还可以表示整数无法表示的分数。</p>
+<p>使用浮点数时，我们将数表示成小数乘以 10 的幂。</p>
+<p>你可能见过浮点数被写成</p>
+<ul>
+<li><code>1.29e-3</code></li>
+<li><code>-2.3e+5</code></li>
+</ul>
+<p>和其它的一些看起来很奇怪的形式。</p>
+<p>下面的几种类型：</p>
+<ul>
+<li><code>float</code></li>
+<li><code>double</code></li>
+<li><code>long double</code></li>
+</ul>
+<p>是用来表示带有小数点的数字（浮点类型）的。这几种类型都可以表示正数和负数。</p>
+<p>任何 C 的实现都必须满足的最小要求是 <code>float</code> 可以表示范围在 10^-37 到 10^+37 之间的数，这通常用 32 位比特实现。 <code>double</code> 可以表示一组更大范围的数，<code>long double</code> 可以保存的数还要更多。</p>
+<p>与整数一样，浮点数的确切值取决于具体实现。</p>
+<p>在现代的 Mac 上，<code>float</code> 用 32 位表示，精度为 24 个有效位，剩余 8 位被用来编码指数部分。</p>
+<p><code>double</code> 用 64 位表示，精度为 53 个有效位，剩余 11 为用于编码指数部分。</p>
+<p><code>long double</code> 类型用 80 位表示，精度为 64 位有效位，剩余 15 位被用来编码指数部分。</p>
+<p>你如何能在自己的计算机上确定这些类型的大小呢？你可以写一个程序来干这事儿：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;char size: %lu bytes</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">));</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;int size: %lu bytes</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;short size: %lu bytes</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">short</span><span class="p">));</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;long size: %lu bytes</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span><span class="p">));</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;float size: %lu bytes</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">));</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;double size: %lu bytes</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">));</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;long double size: %lu bytes</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">double</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>在我的系统上（一台现代 Mac），输出如下：</p>
+<div class="highlight"><pre><span></span><code>char size: 1 bytes
+int size: 4 bytes
+short size: 2 bytes
+long size: 8 bytes
+float size: 4 bytes
+double size: 8 bytes
+long double size: 16 bytes
+</code></pre></div>
+<h2 id="_8">常量<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>咱们现在来谈谈常量。</p>
+<p>常量的声明与变量类似，不同之处在于常量声明的前面带有 <code>const</code> 关键字，并且你总是需要给常量指定一个值。</p>
+<p>就像这样：</p>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">37</span><span class="p">;</span>
+</code></pre></div>
+<p>这在 C 中是完全有效的，尽管通常情况下将常量声明为大写，就像这样：</p>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">AGE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">37</span><span class="p">;</span>
+</code></pre></div>
+<p>虽然这只是一个惯例，但是在你阅读或编写 C 程序时，他能给你提供巨大的帮助，因为它提高了可读性。大写的名字意味着常量，小写的名字意味着变量。</p>
+<p>常量的命名规则与变量相同：可以包含任意大小写字母、数字和下划线，但是不能以数字开头。<code>AGE</code> 和 <code>Age10</code> 都是有效的变量名，而 <code>1AGE</code> 就不是了。</p>
+<p>另一种定义常量的方式是使用这种语法：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define AGE 37</span>
+</code></pre></div>
+<p>在这种情况下，你不需要添加类型，也不需要使用等于符号 <code>=</code>，并且可以省略末尾的分号。</p>
+<p>C 编译器将会在编译时从声明的值推断出相应的类型。</p>
+<h2 id="_9">运算符<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>C 给我们提供了各种各样的运算符，我们可以用来操作数据。</p>
+<p>特别地，我们可以识别不同分组的运算符：</p>
+<ul>
+<li>算术运算符</li>
+<li>比较运算符</li>
+<li>逻辑运算符</li>
+<li>复合赋值运算符</li>
+<li>位运算符</li>
+<li>指针运算符</li>
+<li>结构运算符</li>
+<li>混合运算符</li>
+</ul>
+<p>在这一节中，我们将用两个假想的变量 <code>a</code> 和 <code>b</code> 举例，详细介绍所有这些运算符。</p>
+<p>为了简单起见，我将不会介绍位运算符、结构运算符和指针运算符。</p>
+<h3 id="_10">算术运算符<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>我将把这个小型分组分为二元运算符和一元运算符。</p>
+<p>二元操作符需要两个操作数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">操作符</th>
+<th style="text-align: left;">名字</th>
+<th style="text-align: left;">示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>=</code></td>
+<td style="text-align: left;">赋值</td>
+<td style="text-align: left;"><code>a = b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>+</code></td>
+<td style="text-align: left;">加</td>
+<td style="text-align: left;"><code>a + b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>-</code></td>
+<td style="text-align: left;">减</td>
+<td style="text-align: left;"><code>a - b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>*</code></td>
+<td style="text-align: left;">乘</td>
+<td style="text-align: left;"><code>a * b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/</code></td>
+<td style="text-align: left;">除</td>
+<td style="text-align: left;"><code>a / b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%</code></td>
+<td style="text-align: left;">取模</td>
+<td style="text-align: left;"><code>a % b</code></td>
+</tr>
+</tbody>
+</table>
+<p>一元运算符只需要一个操作数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">运算符</th>
+<th style="text-align: left;">名字</th>
+<th style="text-align: left;">示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>+</code></td>
+<td style="text-align: left;">一元加</td>
+<td style="text-align: left;"><code>+a</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>-</code></td>
+<td style="text-align: left;">一元减</td>
+<td style="text-align: left;"><code>-a</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>++</code></td>
+<td style="text-align: left;">自增</td>
+<td style="text-align: left;"><code>a++</code> or <code>++a</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--</code></td>
+<td style="text-align: left;">自减</td>
+<td style="text-align: left;"><code>a--</code> or <code>--a</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>a++</code> 与 <code>++a</code> 的区别在于：<code>a++</code> 在使用 <code>a</code> 之后才自增它的值，而 <code>++a</code> 会在使用 <code>a</code> 之前自增它的值。</p>
+<p>例如：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="o">++</span><span class="w"> </span><span class="cm">/* b 为 2，a 为 3 */</span>
+<span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">++</span><span class="n">a</span><span class="w"> </span><span class="cm">/* b 为 4，a 为 4 */</span>
+</code></pre></div>
+<p>这也适用于递减运算符。</p>
+<h3 id="_11">比较运算符<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">运算符</th>
+<th style="text-align: left;">名字</th>
+<th style="text-align: left;">示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>==</code></td>
+<td style="text-align: left;">相等</td>
+<td style="text-align: left;"><code>a == b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>!=</code></td>
+<td style="text-align: left;">不相等</td>
+<td style="text-align: left;"><code>a != b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>&gt;</code></td>
+<td style="text-align: left;">大于</td>
+<td style="text-align: left;"><code>a &gt; b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>&lt;</code></td>
+<td style="text-align: left;">小于</td>
+<td style="text-align: left;"><code>a &lt; b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>&gt;=</code></td>
+<td style="text-align: left;">大于等于</td>
+<td style="text-align: left;"><code>a &gt;= b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>&lt;=</code></td>
+<td style="text-align: left;">小于等于</td>
+<td style="text-align: left;"><code>a &lt;= b</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_12">逻辑运算符<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>!</code> 非（例如：<code>!a</code>）</li>
+<li><code>&amp;&amp;</code> 与（例如：<code>a &amp;&amp; b</code>）</li>
+<li><code>||</code> 或（例如：<code>a || b</code>）</li>
+</ul>
+<p>这些运算符在使用布尔值时非常有用。</p>
+<h3 id="_13">复合赋值运算符<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>当赋值与算术运算同时进行时，这些运算符非常有用。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">运算符</th>
+<th style="text-align: left;">名字</th>
+<th style="text-align: left;">示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>+=</code></td>
+<td style="text-align: left;">加且赋值</td>
+<td style="text-align: left;"><code>a += b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>-=</code></td>
+<td style="text-align: left;">减且赋值</td>
+<td style="text-align: left;"><code>a -= b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>*=</code></td>
+<td style="text-align: left;">乘且赋值</td>
+<td style="text-align: left;"><code>a *= b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/=</code></td>
+<td style="text-align: left;">除且赋值</td>
+<td style="text-align: left;"><code>a /= b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%=</code></td>
+<td style="text-align: left;">求模且赋值</td>
+<td style="text-align: left;"><code>a %= b</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_14">三目运算符<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>三目运算符是 C 中唯一一个使用三个操作数的运算符，并且它是表达条件的简便方法。</p>
+<p>它看起来长这样：</p>
+<div class="highlight"><pre><span></span><code>&lt;条件&gt; ? &lt;表达式&gt; : &lt;表达式&gt;
+</code></pre></div>
+<p>示例：</p>
+<p>若 <code>a</code> 的值为 <code>true</code>，就执行语句 <code>b</code>，否则执行语句 <code>c</code>。</p>
+<p>三目运算符的功能与 if/else 条件语句相同，但是它更短，还可以被内联进表达式。</p>
+<h3 id="sizeof">sizeof<a class="headerlink" href="#sizeof" title="Permanent link">&para;</a></h3>
+<p><code>sizeof</code> 运算符返回你传入的操作数的大小。你可以传入变量，或者甚至是类型也可以。</p>
+<p>使用示例：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">37</span><span class="p">;</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%ld</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">age</span><span class="p">));</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%ld&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="_15">运算符优先级<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>对于所有的这些运算符（以及我们还没有在本文中介绍的其它运算符，包括位运算符、结构运算符和指针运算符），我们在单个表达式中一起使用它们时必须要留意。</p>
+<p>假如我们有这个运算：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+</code></pre></div>
+<p><code>c</code> 的值是多少？我们在执行乘和除之前有进行加法操作吗？</p>
+<p>这里是给我们解惑的一组规则。</p>
+<p>按照顺序，优先级从低到高：</p>
+<ul>
+<li>赋值运算符 <code>=</code></li>
+<li>二元运算符 <code>+</code> 和 <code>-</code></li>
+<li>运算符 <code>*</code> 和 <code>/</code></li>
+<li>一元运算符 <code>+</code> 和 <code>-</code></li>
+</ul>
+<p>运算符还具有关联规则，除了一元运算符和赋值运算符之外，该规则总是从左到右的。</p>
+<p>在：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+</code></pre></div>
+<p>中，我们首先执行 <code>a * a / b</code>，由于是从左到右的，我们可以拆分为 <code>a * a</code> 与其结果 <code>/b</code>：<code>2 * 2 = 4</code>，<code>4 / 4 = 1</code>。</p>
+<p>然后我们可以进行加法操作和减法操作：4 + 1 - 2。<code>c</code> 的值是 <code>3</code>。</p>
+<p>然而，在所有的示例中，我都想确保你意识到你可以使用括号让任何相似的表达式更易读和易理解。</p>
+<p>括号的优先级比其它任何运算符都要高。</p>
+<p>上述示例表达式可以被重写为：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">((</span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+</code></pre></div>
+<p>并且我们不必考虑太多。</p>
+<h2 id="_16">条件语句<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<p>任何编程语言都给程序员提供了进行选择的能力。</p>
+<p>我们想要在一些情况下进行 X，而在其它情况下进行 Y。</p>
+<p>我们想检查数据，根据数据的状态做选择。</p>
+<p>C 给我们提供了两种方式。</p>
+<p>第一种方式是带 <code>else</code> 的 <code>if</code> 语句，第二种是 <code>switch</code> 语句。</p>
+<h3 id="if">if<a class="headerlink" href="#if" title="Permanent link">&para;</a></h3>
+<p>在 <code>if</code> 语句中，你可以在检查到条件为 true 的时候，执行花括号内的代码块：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/* 进行一些操作 */</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>如果原始条件的结果是 false，你可以追加一个 <code>else</code> 块以不同的代码块：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/* 进行一些操作 */</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/* 进行另一些操作 */</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>谨防一种常见的缺陷源——总是在比较中使用比较运算符 <code>==</code>，而不是赋值运算符 <code>=</code>。如果你不这么做，除非参数为 <code>0</code>，否则 <code>if</code> 条件检查的结果将一直都是 true。例如，如果你这么做：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/* 永远都不会被调用 */</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>为什么会这样呢？因为条件检查会寻找一个布尔类型的结果（比较的结果），数字 <code>0</code> 总是等于 false。其它的任何东西都是 true，包括负数。</p>
+<p>通过将多个 <code>if</code> 语句堆叠在一起，你可以有多个 <code>else</code> 块：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/* do something */</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/* 进行一些操作 */</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/* 进行另一些操作 */</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="switch">switch<a class="headerlink" href="#switch" title="Permanent link">&para;</a></h3>
+<p>如果你的检查需要使用非常多的 if/else/if 块，可能是因为你需要检查变量的具体值，这时 <code>switch</code> 语句对你来说就非常有用了。</p>
+<p>你可以提供一个变量作为条件，然后为期望的每个值使用一个 <code>case</code> 入口点：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span>
+<span class="w">    </span><span class="cm">/* 进行一些操作 */</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
+<span class="w">    </span><span class="cm">/* 进行另一些操作 */</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
+<span class="w">    </span><span class="cm">/* 进行另一些操作 */</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+</code></pre></div>
+<p>当前一个 case 执行完后，为了避免下一个 case 被执行，我们需要在每个 case 的末尾使用 <code>break</code> 关键字。这种“级联”效果在某些创造性方法中非常有用的。</p>
+<p>你可以在末尾添加一个“捕获所有的” case，名为 <code>default</code>：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span>
+<span class="w">    </span><span class="cm">/* 进行一些操作 */</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
+<span class="w">    </span><span class="cm">/* 进行另一些操作 */</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
+<span class="w">    </span><span class="cm">/* 进行另一些操作 */</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">default</span><span class="o">:</span>
+<span class="w">    </span><span class="cm">/* 处理所有其它的情况 */</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="_17">循环<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<p>C 给我们提供了三种循环：<strong>For 循环</strong>、<strong>while 循环</strong> 和 <strong>do while 循环</strong>。它们都允许你在数组上进行迭代，但又各有不同。咱们仔细来看一看它们。</p>
+<h3 id="for">For 循环<a class="headerlink" href="#for" title="Permanent link">&para;</a></h3>
+<p>第一种执行循环是 <strong>for 循环</strong>，它可能也是最常见的循环。</p>
+<p>使用 <code>for</code> 关键字时，我们可以先定义循环的 <em>规则</em>，然后提供反复执行的那个代码块。</p>
+<p>就像这样：</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/* 反复执行的指令 */</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>(int i = 0; i &lt;= 10; i++)</code> 代码块包含与循环细节有关的三个部分：</p>
+<ul>
+<li>初始条件（<code>int i = 0</code>）</li>
+<li>测试（<code>i &lt;= 10</code>）</li>
+<li>增长（<code>i++</code>）</li>
+</ul>
+<p>我们首先定义循环变量，本示例中为 <code>i</code>。<code>i</code> 是循环中的一个常用变量名，<code>j</code> 是嵌套循环（循环内的循环）内使用的变量名。这只是一个惯例。</p>
+<p>变量 <code>i</code> 的值被初始化为 0，并且第一次迭代执行完毕。然后 <code>i</code> 像增长部分（这个示例中是 <code>i++</code>，递增 1）所说的那样增长，并且所有的循环会一直重复，直到 <code>i</code> 的值达到数字 10。</p>
+<p>在循环的主代码块内，我们可以访问变量 <code>i</code>，从而获知我们当前所处的是哪个迭代。这个程序应该打印 <code>0 1 2 3 4 5 5 6 7 8 9 10</code>：</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/* 反复执行的指令 */</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%u &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>循环可以从较高的数字开始，往较低的数字逼近，就像这样：</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/* 反复执行的指令 */</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>你也可以让循环变量的增量为 2 或者其它值：</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/* 反复执行的指令 */</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="while">while 循环<a class="headerlink" href="#while" title="Permanent link">&para;</a></h3>
+<p><strong>while 循环</strong> 写起来比 <code>for</code> 循环要简单，因为它需要你在自己的部分做更多的事情。</p>
+<p>使用 <code>while</code> 时，你只需要检查条件，而不用在循环开始时预先定义所有的循环数据（就像你在 <code>for</code> 循环中做的那样）：</p>
+<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<p>这段代码假定 <code>i</code> 已经定义并且用某个值进行了初始化。</p>
+<p>除非你在循环内的某些地方增加变量 <code>i</code> 的值，否则这个循环会变成一个 <strong>无限循环</strong>。无限循环非常糟糕，因为它会阻塞程序，从而使其它任何事情都不会发生。</p>
+<p>对于一个“正确的” while 循环，这是你需要知道的：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/* 做点事情 */</span>
+
+<span class="w">  </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>其中有一个例外，我们将会在一分钟后看到它。在这之前，让我介绍下 <code>do while</code>。</p>
+<h3 id="do-while">Do while 循环<a class="headerlink" href="#do-while" title="Permanent link">&para;</a></h3>
+<p>while 循环非常棒，但是有些时候你可能需要做某件特定的事情：你总是想执行某个代码块，然后 <em>可能</em> 一直重复它。</p>
+<p>这可以通过 <code>do while</code> 关键字来完成。它在某种程度上和 <code>while</code> 循环非常类似，但是会有些许不同：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/* 做点事情 */</span>
+
+<span class="w">  </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
+</code></pre></div>
+<p>尽管条件检查在底部，但是包含注释 <code>/* 做点事情 */</code> 的代码块总是会至少执行一次。</p>
+<p>然后，只要 <code>i</code> 小于 10，我们都将会重复这个代码块。</p>
+<h3 id="break">使用 break 跳出循环<a class="headerlink" href="#break" title="Permanent link">&para;</a></h3>
+<p>在所有的 C 循环内，不管循环的条件设置得如何，我们都有一种在某个时间立即跳出循环的方法。</p>
+<p>这是通过 <code>break</code> 关键字来完成的。</p>
+<p>这在很多情况下非常有用，你可能想检查某个变量的值，例如：</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">someVariable</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>对 <code>while</code> 循环（也适用于 <code>do while</code> 循环）来说，使用这种方式跳出循环非常有趣，因为我们可以创建一个看似无限的循环，不过我们可以在某个条件发生时结束这个循环。你可以在循环代码块里面定义它：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/* 做点事情 */</span>
+
+<span class="w">  </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>这种循环在 C 中非常普遍。</p>
+<h2 id="_18">数组<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<p>数组是存储多个变量的变量。</p>
+<p>在 C 中，数组中的每个值都必须有 <strong>相同的类型</strong>。这意味着你将会有 <code>int</code> 值组成的数组， <code>double</code> 值组成的数组，等等。</p>
+<p>你可以像这样定义一个 <code>int</code> 型的数组：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">prices</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+</code></pre></div>
+<p>你必须总是声明数组的大小。C 没有提供开箱即用的动态数组（为此，你必须使用像链表这样的数据结构）。</p>
+<p>你可以使用常量定义数组的大小：</p>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">SIZE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">prices</span><span class="p">[</span><span class="n">SIZE</span><span class="p">];</span>
+</code></pre></div>
+<p>你可以在定义数组的时候进行初始化，就像这样：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">prices</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+<p>但是你也可以在定义数组之后为其赋值，用这种方式：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">prices</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+
+<span class="n">prices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="n">prices</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="n">prices</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="n">prices</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="n">prices</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</code></pre></div>
+<p>或者使用循环，这更加实际：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">prices</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">prices</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w"> </span><span class="cm">/* 第一个数组项的值 */</span>
+<span class="n">prices</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span><span class="w"> </span><span class="cm">/* 第二个数组项的值 */</span>
+</code></pre></div>
+<p>数组的索引从 0 开始，所以一个有五个元素的数组，比如上面的 <code>prices</code> 数组，将会包含的数组项的范围为 <code>prices[0]</code> 到 <code>prices[4]</code>。</p>
+<p>有趣的是，C 数组中的所有元素都是顺序存放的，一个接一个。高级编程语言通常不会出现这种情况。</p>
+<p>另一件有趣的事情是：数组的变量名，上述示例中的 <code>prices</code>，是一个指向数组中首个元素的 <strong>指针</strong>。因此，可以像普通指针一样使用数组。</p>
+<p>稍后会介绍更多有关指针的内容。</p>
+<h2 id="_19">字符串<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<p>在 C 中，字符串是一种特殊的数组：字符串是由 <code>char</code> 值组成的数组：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="mi">7</span><span class="p">];</span>
+</code></pre></div>
+<p>我在介绍 C 中的数据类型时介绍过 <code>char</code> 类型，但是简而言之，它通常用于存储 ASCII 表中的字母。</p>
+<p>可以像初始化一个普通的数组那样初始化一个字符串：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;F&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;l&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;v&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;i&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;o&quot;</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+<p>或者使用更加方便的字符串字面量（也被称为字符串常量），一组用双引号引起来的字符：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Flavio&quot;</span><span class="p">;</span>
+</code></pre></div>
+<p>你可以通过 <code>printf()</code> 打印字符串，使用 <code>%s</code>：</p>
+<div class="highlight"><pre><span></span><code><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+</code></pre></div>
+<p>你有注意到“Flavio”是 6 个字符长，但是我定义了一个长度为 7 的数组吗？这是因为字符串中的最后一个字符必须是 <code>0</code>，它是字符串的终止符号，我们必须给它留个位置。</p>
+<p>记住这个非常重要，尤其是当你操作字符串的时候。</p>
+<p>说到操作字符串，C 提供了一个非常重要的标准库：<code>string.h</code>。</p>
+<p>这个库是必不可少的，因为它抽象了很多与字符串有关的底层细节，给我们提供了一组非常有用的函数。</p>
+<p>你可以在程序中加载这个库，需要在文件顶部加上：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
+</code></pre></div>
+<p>一旦你这么做了之后，你就可以访问函数：</p>
+<ul>
+<li><code>strcpy()</code>：将一个字符串复制到另一个字符串</li>
+<li><code>strcat()</code>：将一个字符串追加到另一个字符串</li>
+<li><code>strcmp()</code>：比较两个字符串是否相等</li>
+<li><code>strncmp()</code>：比较两个字符串的前 <code>n</code> 个字符</li>
+<li><code>strlen()</code>：计算字符串的长度</li>
+</ul>
+<p>还有很多很多其它的函数供你调用。</p>
+<h2 id="_20">指针<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<p>在我看来，指针是 C 中最令人不解/最具挑战的部分。尤其当你是编程新手的时候，如果你是从像 Python 或 JavaScript 这样的高级语言来到 C 的，也会这样。</p>
+<p>在这一节中，我想以最简单但又不模糊的方式介绍它们。</p>
+<p>指针是某个内存块的地址，这个内存块包含一个变量。</p>
+<p>当你像这样声明一个整数时：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">37</span><span class="p">;</span>
+</code></pre></div>
+<p>我们可以使用 <code>&amp;</code> 运算符获取内存中该变量的地址值：</p>
+<div class="highlight"><pre><span></span><code><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%p&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">age</span><span class="p">);</span><span class="w"> </span><span class="cm">/* 0x7ffeef7dcb9c */</span>
+</code></pre></div>
+<p>我在 <code>printf()</code> 内声明 <code>%p</code> 格式来打印地址值。</p>
+<p>我们可以将该地址赋给一个变量：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">age</span><span class="p">;</span>
+</code></pre></div>
+<p>当在声明中使用 <code>int *address</code> 时，我们并没有在声明一个整数值，而是在声明一个 <strong>指向一个整数的指针</strong>。</p>
+<p>我们可以使用指针运算符获取该地址指向的变量的值：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">37</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">age</span><span class="p">;</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%u&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">address</span><span class="p">);</span><span class="w"> </span><span class="cm">/* 37 */</span>
+</code></pre></div>
+<p>我们又一次使用指针运算符，但是由于这次它不是一个声明，所以它表示“该指针指向的变量的值”。</p>
+<p>在这个示例中，我们声明了一个 <code>age</code> 变量，但是我们使用了一个指针来初始化它的值：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">age</span><span class="p">;</span>
+<span class="o">*</span><span class="n">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">37</span><span class="p">;</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%u&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">address</span><span class="p">);</span>
+</code></pre></div>
+<p>在使用 C 时，你会发现很多东西都建立在这个简单的概念之上。所以自己运行一下上面的示例，确保你对它有所熟悉。</p>
+<p>指针是一个非常好的机会，因为它们迫使我们考虑内存地址以及数据是如何组织的。</p>
+<p>数组就是一个例子。当你声明一个数组时：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">prices</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+<p><code>prices</code> 变量实际上是一个指向数组首个元素的指针。在这种情况下，你可以使用这个 <code>printf()</code> 函数获取第一个数组元素的值：</p>
+<div class="highlight"><pre><span></span><code><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%u&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">prices</span><span class="p">);</span><span class="w"> </span><span class="cm">/* 5 */</span>
+</code></pre></div>
+<p>我们可以通过给 <code>prices</code> 指针加一来获取第二个元素，这是一件非常酷的事情：</p>
+<div class="highlight"><pre><span></span><code><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%u&quot;</span><span class="p">,</span><span class="err">`</span><span class="n">_</span><span class="w"> </span><span class="err">`</span><span class="p">(</span><span class="n">prices</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span><span class="w"> </span><span class="cm">/* 4 */</span>
+</code></pre></div>
+<p>这种做法对于所有的其它值也适用。</p>
+<p>我们还可以进行很多非常美妙的字符串操作，因为字符串的底层就是数组。</p>
+<p>我们还有很多其它的使用场景，包括传递对象或函数的引用，从而避免消耗更多的资源来进行复制。</p>
+<h2 id="_21">函数<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
+<p>我们通过函数将代码组织成子例程，这样就可以：</p>
+<ol>
+<li>给它一个名字</li>
+<li>在需要它们的时候进行调用</li>
+</ol>
+<p>从你的第一个程序（“Hello, World!”）开始，你就在使用 C 函数了：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>main()</code> 函数是一个非常重要的函数，它是 C 程序的入口点。</p>
+<p>这是另一个函数：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">doSomething</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%u&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>函数有 4 个重要的方面：</p>
+<ol>
+<li>它们有一个名字，所以我们可以在之后调用它们</li>
+<li>它们声明一个返回值</li>
+<li>它们可以有参数</li>
+<li>它们有一个函数体，用花括号包裹</li>
+</ol>
+<p>函数体是一组指令，任何时候，只要函数被调用，这组指令就会被执行。</p>
+<p>如果函数没有返回值，你可以在函数名前面使用关键字 <code>void</code>。否则你就要声明该函数的返回值类型（整数为 <code>int</code>，浮点数为 <code>float</code>，字符串为 <code>const char *</code>，等等）。</p>
+<p>函数返回值的数量不能超过一个。</p>
+<p>函数可以有参数。它们是可选的。如果函数没有参数，我们就在括号内插入 <code>void</code>，就像这样：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">doSomething</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/* ... */</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>在这种情况下，当我们调用该函数时，括号内没有任何东西：</p>
+<div class="highlight"><pre><span></span><code><span class="n">doSomething</span><span class="p">();</span>
+</code></pre></div>
+<p>如果有一个参数，我们就声明该参数的类型和名字，就像这样：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">doSomething</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="cm">/* ... */</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>当我们调用该函数时，我们会在括号内传递对应的参数，就像这样：</p>
+<div class="highlight"><pre><span></span><code><span class="n">doSomething</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</code></pre></div>
+<p>我们可以有多个参数，为此我们使用逗号对它们进行分隔，在声明和调用时都是这样：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">doSomething</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">value1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="cm">/* ... */</span>
+<span class="p">}</span>
+
+<span class="n">doSomething</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+</code></pre></div>
+<p>参数是通过 <strong>拷贝</strong> 传递的。这意味着如果你修改 <code>value1</code>，它的值是在局部作用域内修改的。函数外的那个值，即我们在调用时传入的值，并不会改变。</p>
+<p>如果你传入的参数为一个 <strong>指针</strong>，你可以修改该变量的值，因为你现在可以使用它的内存地址直接访问它。</p>
+<p>你不能为参数定义默认值。C++ 是可以的（Arduino Language 程序也可以），但是 C 不行。</p>
+<p>确保你在调用函数之前定义了该函数，否则编译器将会给出一个警告和一个错误：</p>
+<div class="highlight"><pre><span></span><code>➜<span class="w">  </span>~<span class="w"> </span>gcc<span class="w"> </span>hello.c<span class="w"> </span>-o<span class="w"> </span>hello<span class="p">;</span><span class="w"> </span>./hello
+hello.c:13:3:<span class="w"> </span>warning:<span class="w"> </span>implicit<span class="w"> </span>declaration<span class="w"> </span>of
+<span class="w">      </span><span class="k">function</span><span class="w"> </span><span class="s1">&#39;doSomething&#39;</span><span class="w"> </span>is<span class="w"> </span>invalid<span class="w"> </span><span class="k">in</span><span class="w"> </span>C99
+<span class="w">      </span><span class="o">[</span>-Wimplicit-function-declaration<span class="o">]</span>
+<span class="w">  </span>doSomething<span class="o">(</span><span class="m">3</span>,<span class="w"> </span><span class="m">4</span><span class="o">)</span><span class="p">;</span>
+<span class="w">  </span>^
+hello.c:17:6:<span class="w"> </span>error:<span class="w"> </span>conflicting<span class="w"> </span>types<span class="w"> </span><span class="k">for</span>
+<span class="w">      </span><span class="s1">&#39;doSomething&#39;</span>
+void<span class="w"> </span>doSomething<span class="o">(</span>int<span class="w"> </span>value1,<span class="w"> </span>char<span class="w"> </span>value2<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">     </span>^
+hello.c:13:3:<span class="w"> </span>note:<span class="w"> </span>previous<span class="w"> </span>implicit<span class="w"> </span>declaration
+<span class="w">      </span>is<span class="w"> </span>here
+<span class="w">  </span>doSomething<span class="o">(</span><span class="m">3</span>,<span class="w"> </span><span class="m">4</span><span class="o">)</span><span class="p">;</span>
+<span class="w">  </span>^
+<span class="m">1</span><span class="w"> </span>warning<span class="w"> </span>and<span class="w"> </span><span class="m">1</span><span class="w"> </span>error<span class="w"> </span>generated.
+</code></pre></div>
+<p>你收到的警告与顺序有关，我之前有提到过这个。</p>
+<p>错误与另一件事情有关。因为 C 没有在调用函数之前没有“看到”该函数的声明，所以它必须进行假设。并且，它假设该函数返回 <code>int</code>。然而该函数返回的是 <code>void</code>，因此出现了错误。</p>
+<p>如果你将该函数的定义修改为：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">doSomething</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">value1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">value1</span><span class="p">,</span><span class="w"> </span><span class="n">value2</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>你就只会得到警告，错误消失了：</p>
+<div class="highlight"><pre><span></span><code>➜  ~ gcc hello.c -o hello; ./hello
+hello.c:14:3: warning: implicit declaration of
+      function &#39;doSomething&#39; is invalid in C99
+      [-Wimplicit-function-declaration]
+  doSomething(3, 4);
+  ^
+1 warning generated.
+</code></pre></div>
+<p>不管是何种情况，确保你在使用函数之前声明了它。要么将函数上移，要么在头文件中加入该函数的原型。</p>
+<p>在函数内部，你可以声明变量：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">doSomething</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">doubleValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>变量在调用该函数的那一刻创建，并且在函数退出的时候销毁。它对函数外面来说是不可见的。</p>
+<p>在函数内部，你可以调用函数自己。这被称为 <strong>递归</strong>，它提供了特有的机会。</p>
+<h2 id="_22">输入与输出<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h2>
+<p>C 是一门小型语言，并且 C 的“内核”并不包含任何输入/输出（I/O）功能。</p>
+<p>当然，这并不是 C 所独有的。语言内核与 I/O 无关是很常见的。</p>
+<p>在 C 中，输入/输出由 C 的标准库通过一组定义在 <code>stdio.h</code> 头文件中的函数向我们提供。</p>
+<p>你可以在 C 文件顶部使用：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</code></pre></div>
+<p>导入这个库。</p>
+<p>这个库给我们提供了很多其它的函数：</p>
+<ul>
+<li><code>printf()</code></li>
+<li><code>scanf()</code></li>
+<li><code>sscanf()</code></li>
+<li><code>fgets()</code></li>
+<li><code>fprintf()</code></li>
+</ul>
+<p>在描述这个函数干啥之前，我想先花一分钟讲一下 <strong>I/O 流</strong>。</p>
+<p>在 C 中，我们有三种类型的 I/O 流：</p>
+<ul>
+<li><code>stdin</code>（标准输入）</li>
+<li><code>stdout</code>（标准输出）</li>
+<li><code>stderr</code>（标准错误）</li>
+</ul>
+<p>借助 I/O 函数，我们始终可以和流一起工作。流是一个高级接口，可以代表一个设备或文件。从 C 的角度来看，我们在从文件读取和命令行读取没有任何差异：不论如何，它都是一个 I/O 流。</p>
+<p>那是我们需要牢记的一件事情。</p>
+<p>某些函数是为与特定的流一起工作而设计的，就像 <code>printf()</code>一样，我们用它来将字符串打印到 <code>stdout</code>。使用它更加通用的版本 <code>fprintf()</code> 时，我们可以指定我们要写到的流。</p>
+<p>由于我最开始谈论的是 <code>printf()</code>，咱们现在就介绍它吧。</p>
+<p><code>printf()</code> 是你在学习 C 编程时最先使用的函数之一。</p>
+<p>在它最简单的使用形式中，你给它传递一个字符串字面量：</p>
+<div class="highlight"><pre><span></span><code><span class="n">printf</span><span class="p">(</span><span class="s">&quot;hey!&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>并且程序会将该字符串的内容打印到屏幕上。</p>
+<p>你可以打印一个变量的值。但是这有点棘手，因为你需要添加一个特殊的字符，一个占位符，它会根据变量的类型变化。例如，我们为有符号十进制整数使用 <code>%d</code>：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">37</span><span class="p">;</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;My age is %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">);</span>
+</code></pre></div>
+<p>通过使用逗号，我现在可以打印多个变量：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">age_yesterday</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">37</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">age_today</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">36</span><span class="p">;</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Yesterday my age was %d and today is %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">age_yesterday</span><span class="p">,</span><span class="w"> </span><span class="n">age_today</span><span class="p">);</span>
+</code></pre></div>
+<p>还有其它像 <code>%d</code> 一样的格式指示符：</p>
+<ul>
+<li><code>%c</code> 用于字符</li>
+<li><code>%s</code> 用于字符串</li>
+<li><code>%f</code> 用于浮点数</li>
+<li><code>%p</code> 用于指针</li>
+</ul>
+<p>还有很多。</p>
+<p>我们可以在 <code>printf()</code> 中使用转义字符，比如 <code>\n</code> 可以用来让输出创建一个新行。</p>
+<h3 id="scanf"><code>scanf()</code><a class="headerlink" href="#scanf" title="Permanent link">&para;</a></h3>
+<p><code>printf()</code> 被用作输出函数。我现在想介绍一个输入函数，这样我们就能完成所有的 I/O 操作：<code>scanf()</code>。</p>
+<p>这个函数被用来从用户运行的程序，从命令行获取一个值。</p>
+<p>我们必须先定义一个变量，它将被用来存放我们从输入中获取的值：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+</code></pre></div>
+<p>然后我们调用 <code>scanf()</code>，传入两个参数：变量的格式（类型），和变量的地址：</p>
+<div class="highlight"><pre><span></span><code><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">age</span><span class="p">);</span>
+</code></pre></div>
+<p>如果我们想在输入时获取一个字符串，还记得字符串名是一个指向第一个字符的指针，所以你不需要在它前面加上 <code>&amp;</code>：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+<span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+</code></pre></div>
+<p>这里是一个小程序，它同时使用了 <code>printf()</code> 和 <code>scanf()</code>：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Enter your name: &quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;you entered %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="_23">变量作用域<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h2>
+<p>当你在 C 程序中定义一个变量时，根据你声明它的位置，它会有一个不同的 <strong>作用域（scope）</strong>。</p>
+<p>这意味着它将会在某些地方可用，而在其它地方不可用。</p>
+<p>该位置决定了两种类型的变量：</p>
+<ul>
+<li><strong>全局变量（global variables）</strong></li>
+<li><strong>局部变量（local variables）</strong></li>
+</ul>
+<p>这就是区别：在函数内部声明的变量就是局部变量，比如这个：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">37</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>局部变量只有在函数内才能访问，它们会在函数结束后不复存在。它们会被从内存中清除掉（有一些例外）。</p>
+<p>定义在函数外部的变量就是全局变量，比如这个示例：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">37</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/* ... */</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>全局变量可以从程序中的任何一个函数访问，它们在整个程序的执行过程中都是可用的，直到程序结束。</p>
+<p>我提到过局部变量在函数结束之后就不再可用。</p>
+<p>原因是局部变量默认是在 <strong>栈（stack）</strong> 上声明的，除非你使用指针在堆中显式地分配它们。但是这样一来，你就不得不自己管理内存了。</p>
+<h2 id="_24">静态变量<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h2>
+<p>在函数内部，你可以使用 <code>static</code> 关键字初始化一个 <strong>静态变量（static variable）</strong>。</p>
+<p>我说了“在函数内部”，因为全局变量默认就是静态的，所以没有必要再添加这个关键字。</p>
+<p>什么是静态变量？静态变量在没有声明初始值的时候会被初始化为 0，并且它会在函数调用中保持该值。</p>
+<p>考虑这个函数：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">incrementAge</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="n">age</span><span class="o">++</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>如果我们调用一次 <code>incrementAge()</code>，我们将会得到返回值 <code>1</code>。如果我们再调用一次，我们总是会得到 1，因为 <code>age</code> 是一个局部变量并且在每次调用该函数的时候都会被重新初始化为 <code>0</code>。</p>
+<p>如果我们将该函数改为：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">incrementAge</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="n">age</span><span class="o">++</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>现在我们每调用一次这个函数，我们就会得到一个增加了的值：</p>
+<div class="highlight"><pre><span></span><code><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">incrementAge</span><span class="p">());</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">incrementAge</span><span class="p">());</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">incrementAge</span><span class="p">());</span>
+</code></pre></div>
+<p>将会给我们：</p>
+<div class="highlight"><pre><span></span><code>1
+2
+3
+</code></pre></div>
+<p>我们也可以在 <code>static int age = 0;</code> 中省略初始化 <code>age</code> 为 0 的代码，只写 <code>static int age;</code>，因为静态变量在创建时会自动设置为 0。</p>
+<p>我们也可以有静态数组。这时，每一个数组元素都被初始化为 0：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">incrementAge</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ages</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+<span class="w">  </span><span class="n">ages</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">ages</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="_25">全局变量<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h2>
+<p>在这一节中，我想多谈论一点 <strong>全局变量与局部变量</strong> 之间的差异。</p>
+<p><strong>局部变量</strong> 被定义在函数内部，只在该函数内可用。</p>
+<p>就像这样：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="n">j</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%u&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">);</span><span class="w"> </span><span class="c1">//10</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>j</code> 在 <code>main</code> 函数之外的任何地方都不可用。</p>
+<p><strong>全局变量</strong> 定义在所有函数的外部，就像这样：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">char</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%u&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="w"> </span><span class="c1">//10</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>全局变量可以被程序内的任何函数访问。该访问并不只局限于读取全局变量的值：任何函数都可以更新全局变量的值。</p>
+<p>因此，全局变量是一种在函数间共享相同数据的一种方式。</p>
+<p>局部变量的主要不同在于，分配给局部变量的内存会在函数结束之后立即释放。</p>
+<p>全局变量只在程序结束时才会释放。</p>
+<h2 id="_26">类型定义<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h2>
+<p>C 中的 <code>typedef</code> 关键字允许你定义新的类型。</p>
+<p>我们可以从 C 内置的类型开始创建自己的类型，使用这个语法：</p>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="n">existingtype</span><span class="w"> </span><span class="n">NEWTYPE</span>
+</code></pre></div>
+<p>按照惯例，我们创建的新类型通常是大写的。</p>
+<p>这样可以更加容易区分它，并且可以立即识别出它是一种类型。</p>
+<p>例如，我们可以定义一个新的 <code>NUMBER</code> 类型，它还是 <code>int</code>：</p>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">NUMBER</span>
+</code></pre></div>
+<p>一旦你这么做了之后，你就可以定义新的 <code>NUMBER</code> 变量了：</p>
+<div class="highlight"><pre><span></span><code><span class="n">NUMBER</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</code></pre></div>
+<p>现在你可能会问：为什么？为什么不直接使用内置的 <code>int</code> 类型呢？</p>
+<p>嗯，当两个东西搭配在一起的时候，<code>typedef</code> 会变得真的很有用：枚举类型和结构体。</p>
+<h2 id="_27">枚举类型<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h2>
+<p>使用 <code>typedef</code> 和 <code>enum</code> 关键字，我们可以定义具有指定值的类型。</p>
+<p>这是 <code>typedef</code> 关键字最重要的使用场景之一。</p>
+<p>这是枚举类型的语法：</p>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">//值……</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>按照惯例，我们创建的枚举类通常是大写的。</p>
+<p>这里是一个简单的示例：</p>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nb">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nb">false</span>
+<span class="p">}</span><span class="w"> </span><span class="n">BOOLEAN</span><span class="p">;</span>
+</code></pre></div>
+<p>C 自带 <code>bool</code> 类型，所以这个示例并不实用，但是它会让你领悟到其中的精髓。</p>
+<p>另一个示例是定义一周中的那几个日子：</p>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">monday</span><span class="p">,</span><span class="w">  </span>
+<span class="w">  </span><span class="n">tuesday</span><span class="p">,</span>
+<span class="w">  </span><span class="n">wednesday</span><span class="p">,</span>
+<span class="w">  </span><span class="n">thursday</span><span class="p">,</span>
+<span class="w">  </span><span class="n">friday</span><span class="p">,</span>
+<span class="w">  </span><span class="n">saturday</span><span class="p">,</span>
+<span class="w">  </span><span class="n">sunday</span>
+<span class="p">}</span><span class="w"> </span><span class="n">WEEKDAY</span><span class="p">;</span>
+</code></pre></div>
+<p>这里是使用这个枚举类的一个简单程序：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">monday</span><span class="p">,</span><span class="w">  </span>
+<span class="w">  </span><span class="n">tuesday</span><span class="p">,</span>
+<span class="w">  </span><span class="n">wednesday</span><span class="p">,</span>
+<span class="w">  </span><span class="n">thursday</span><span class="p">,</span>
+<span class="w">  </span><span class="n">friday</span><span class="p">,</span>
+<span class="w">  </span><span class="n">saturday</span><span class="p">,</span>
+<span class="w">  </span><span class="n">sunday</span>
+<span class="p">}</span><span class="w"> </span><span class="n">WEEKDAY</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">WEEKDAY</span><span class="w"> </span><span class="n">day</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">monday</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">day</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">monday</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;It&#39;s monday!&quot;</span><span class="p">);</span><span class="w"> </span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;It&#39;s not monday&quot;</span><span class="p">);</span><span class="w"> </span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>枚举定义中的每个枚举项在内部都与一个整数配对。所以在这个示例中 <code>monday</code> 是 0，<code>tuesday</code> 是 1，以此类推。</p>
+<p>这意味着对应的条件可以是 <code>if (day == 0)</code> 而不是 <code>if (day == monday)</code>，但是对于我们人类来说，使用名字比数字更合理，所以它是一个非常便利的语法。</p>
+<h2 id="_28">结构体<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h2>
+<p>利用 <code>struct</code> 关键字，我们可以使用基本的 C 类型创建复杂的数据结构。</p>
+<p>结构体是一组由不同类型的值组成的集合。C 中的数组被限制为一种类型，所以结构体在很多用例中会显得非常有趣。</p>
+<p>这里是结构体的语法：</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="o">&lt;</span><span class="n">structname</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">//变量……</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>通过将变量添加到右花括号之后，分号之前，你可以声明类型为该结构体的变量，就像这样：</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">flavio</span><span class="p">;</span>
+</code></pre></div>
+<p>或者多个变量也行，就像这样：</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">flavio</span><span class="p">,</span><span class="w"> </span><span class="n">people</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+</code></pre></div>
+<p>这次我声明一个名为 <code>flavio</code> 的 <code>person</code> 变量，以及一个具有 20 个 <code>person</code> 的名为 <code>people</code> 的数组。</p>
+<p>我们也可以稍后再声明变量，使用这个语法：</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">person</span><span class="w"> </span><span class="n">flavio</span><span class="p">;</span>
+</code></pre></div>
+<p>我们可以在声明的时候初始化一个结构体：</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">person</span><span class="w"> </span><span class="n">flavio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">37</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Flavio&quot;</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+<p>一旦定义了结构体，我们就可以使用一个点（<code>.</code>）来访问它里面的值了：</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">person</span><span class="w"> </span><span class="n">flavio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">37</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Flavio&quot;</span><span class="w"> </span><span class="p">};</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s, age %u&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">flavio</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">flavio</span><span class="p">.</span><span class="n">age</span><span class="p">);</span>
+</code></pre></div>
+<p>我们也可以使用点语法改变结构体中的值：</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">person</span><span class="w"> </span><span class="n">flavio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">37</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Flavio&quot;</span><span class="w"> </span><span class="p">};</span>
+
+<span class="n">flavio</span><span class="p">.</span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">38</span><span class="p">;</span>
+</code></pre></div>
+<p>结构体非常有用，因为它们既可以作为函数的参数，也可以作为函数的返回值，以及它们内部的嵌入变量。每个变量都有一个标签。</p>
+<p>注意到结构体是 <strong>复制传递</strong> 的，这一点很重要，除非，当然你可以传递一个指向结构体的指针，这种情况下它就是引用传递。</p>
+<p>使用 <code>typedef</code>，我们可以简化处理结构体时的代码。</p>
+<p>咱们看一个示例：</p>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">PERSON</span><span class="p">;</span>
+</code></pre></div>
+<p>按照惯例，我们使用 <code>typedef</code> 创建的结构体通常是大写的。</p>
+<p>现在，我们可以像这样声明一个新的 <code>PERSON</code> 变量：</p>
+<div class="highlight"><pre><span></span><code><span class="n">PERSON</span><span class="w"> </span><span class="n">flavio</span><span class="p">;</span>
+</code></pre></div>
+<p>并且我们可以用这种方式在声明的时候初始化它们：</p>
+<div class="highlight"><pre><span></span><code><span class="n">PERSON</span><span class="w"> </span><span class="n">flavio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">37</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Flavio&quot;</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+<h2 id="_29">命令行参数<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h2>
+<p>在 C 程序中，你可能需要在命令启动时从命令行接收参数。</p>
+<p>对于简单的需求而言，你只需要将 <code>main()</code> 函数的签名从</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</code></pre></div>
+<p>修改为</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+</code></pre></div>
+<p><code>argc</code> 是一个整数，包含从命令行提供的参数的数量。</p>
+<p><code>argv</code> 是一个字符串数组。</p>
+<p>当程序开始运行时，我们用这两个参数给主函数提供参数。</p>
+<p>注意 <code>argv</code> 数组中总是至少有一个元素：程序的名字。</p>
+<p>咱们以我们用来运行程序的 C 编译器作为示例吧，就像这样：</p>
+<div class="highlight"><pre><span></span><code><span class="n">gcc</span><span class="w"> </span><span class="n">hello</span><span class="p">.</span><span class="n">c</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">hello</span>
+</code></pre></div>
+<p>如果这就是我们的程序，我们的 <code>argc</code> 将会是 4，<code>argv</code> 将是一个包含以下内容的数组：</p>
+<ul>
+<li><code>gcc</code></li>
+<li><code>hello.c</code></li>
+<li><code>-o</code></li>
+<li><code>hello</code></li>
+</ul>
+<p>咱们写一个打印它收到的参数的程序吧：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">argc</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>如果我们的程序名为 <code>hello</code>，并且我们像这样运行它：<code>./hello</code>，我们就会得到以下输出：</p>
+<div class="highlight"><pre><span></span><code>./hello
+</code></pre></div>
+<p>如果我们传递一些随机参数，就像这样：<code>./hello a b c</code>，我们竟会在终端中得到这个输出：</p>
+<div class="highlight"><pre><span></span><code>./hello
+a
+b
+c
+</code></pre></div>
+<p>对于简单的需求而言，这个系统工作得很好。对于更加复杂的需求，有一些常用的包，比如 <strong>getopt</strong>。</p>
+<h2 id="_30">头文件<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h2>
+<p>简单的程序可以直接放在单个文件中。但是当你的程序变大，将它放在单个文件中就不可能了。</p>
+<p>你可以将程序一些部分移动到一个单独的文件中，然后创建一个 <strong>头文件</strong>。</p>
+<p>头文件看起来就像普通的 C 文件一样，但是它是以 <code>.h</code> 而不是 <code>.c</code> 结尾的。它里面的内容是 <strong>声明</strong>，而不是函数的实现和程序的其它部分。</p>
+<p>你已经在第一次使用 <code>printf()</code> 函数或其它 I/O 函数的时候使用过头文件了，如果你要使用它，需要输入以下内容：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</code></pre></div>
+<p><code>#include</code> 是一个预处理器指令。</p>
+<p>该预处理器会在标准库中寻找 <code>stdio.h</code> 文件，因为你使用了花括号包裹它。若要包含你自己的头文件，你需要使用引号（<code>"</code>），就像这样：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;myfile.h&quot;</span>
+</code></pre></div>
+<p>上述代码会让预处理器在当前文件夹内寻找 <code>myfile.h</code>。</p>
+<p>你也可以使用文件夹结构的库：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;myfolder/myfile.h&quot;</span>
+</code></pre></div>
+<p>咱们看一个示例。这个程序计算自给定年份以来的年数：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">calculateAge</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">year</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CURRENT_YEAR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2020</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">CURRENT_YEAR</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">year</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%u&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">calculateAge</span><span class="p">(</span><span class="mi">1983</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>假设我想将 <code>caculateAge</code> 函数移到一个单独的文件中。</p>
+<p>我创建一个名为 <code>calculate_age.c</code> 的文件：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">calculateAge</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">year</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CURRENT_YEAR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2020</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">CURRENT_YEAR</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">year</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>我还创建了一个名为 <code>calculate_age.h</code> 的文件，我在其中放入了 <em>函数原型</em>，除了函数体，它与 <code>.c</code> 文件中的函数完全相同：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">calculateAge</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">year</span><span class="p">);</span>
+</code></pre></div>
+<p>现在在主 <code>.c</code> 文件中，我们可以移除 <code>calculateAge()</code> 函数的定义，并且我们可以导入 <code>calculate_age.h</code>，它会让 <code>calculateAge()</code> 函数可用：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;calculate_age.h&quot;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%u&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">calculateAge</span><span class="p">(</span><span class="mi">1983</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>别忘了编译多个文件组成的程序，你需要在命令行中列出它们，就像这样：</p>
+<div class="highlight"><pre><span></span><code>gcc<span class="w"> </span>-o<span class="w"> </span>main<span class="w"> </span>main.c<span class="w"> </span>calculate_age.c
+</code></pre></div>
+<p>如果配置更加复杂，一个告诉编译器如何编译该程序的 Makefile 是必需的。</p>
+<h2 id="_31">预处理器<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h2>
+<p>预处理器是一个工具，当我们用 C 编程时，它对我们有很大的帮助。它是 C 标准的一部分，就像语言本身、编译器和标准库一样。</p>
+<p>它解析我们的程序，确保编译器在处理之前获得所有需要的东西。</p>
+<p>在实践中，它是做什么的呢？</p>
+<p>例如，它查找你使用 <code>#include</code> 指令包含的所有头文件。</p>
+<p>它还查看你使用 <code>#define</code> 定义的每个常量并将其替换为实际的值。</p>
+<p>这只是一个开始。我提到了这两个操作，是因为它们是最常见的两个。预处理器能做的事情还有很多。</p>
+<p>你有注意到 <code>#include</code> 和 <code>#define</code> 在开头有一个 <code>#</code> 吗？那在预处理器指令中是很常见的。如果某一行以 <code>#</code> 开始，它就会被预处理器关照。</p>
+<h3 id="_32">条件<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h3>
+<p>我们能做的一件事情是使用条件让表达式决定程序的编译方式。</p>
+<p>例如，我们可以检查 <code>DEBUG</code> 常量是否为 0：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DEBUG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="cp">#if DEBUG == 0</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;I am NOT debugging</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="cp">#else</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;I am debugging</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="cp">#endif</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="_33">符号常量<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
+<p>我们可以定义一个 <strong>符号常量（symbolic constant）</strong>：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define VALUE 1</span>
+<span class="cp">#define PI 3.14</span>
+<span class="cp">#define NAME &quot;Flavio&quot;</span>
+</code></pre></div>
+<p>当我们在自己的程序中使用 NAME 或 PI 或 VALUE 时，预处理器会在执行程序之前将名字替换成对应的值。</p>
+<p>符号常量非常有用，因为我们可以给值名字，而不用在编译时创建变量。</p>
+<h3 id="_34">宏<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h3>
+<p>我们还可以使用 <code>#define</code> 定义 <strong>宏（macro）</strong>。宏与符号常量之间的差别在于：宏可以接受一个参数，并且通常包含代码，而符号常量只是一个值：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define POWER(x) ((x) * (x))</span>
+</code></pre></div>
+<p>注意参数两侧的括号：当宏在预编译过程中被替换时，这是一个避免问题的好方法。</p>
+<p>然后我们可以在代码中使用它，像这样：</p>
+<div class="highlight"><pre><span></span><code><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%u</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">POWER</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span><span class="w"> </span><span class="c1">//16</span>
+</code></pre></div>
+<p>它与函数之间的一个大差别就是：宏不会声明参数或返回值的类型，这在一些场景中可能很方便。</p>
+<p>然而，宏的定义被限制成只有一行。</p>
+<h3 id="if-defined">If defined<a class="headerlink" href="#if-defined" title="Permanent link">&para;</a></h3>
+<p>我们可以使用 <code>#ifdef</code> 来检查某个符号常量或宏是否被定义过：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#define VALUE 1</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="cp">#ifdef VALUE</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Value is defined</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="cp">#else</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Value is not defined</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="cp">#endif</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>我们也可以使用 <code>#ifndev</code> 检查对立面（宏未定义）。</p>
+<p>我们还可以使用 <code>#if defined</code> 和 <code>#if !defined</code> 来达到同样的目的。</p>
+<p>像这样将一些代码块包裹到单个块中是很常见的：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#if 0</span>
+
+<span class="cp">#endif</span>
+</code></pre></div>
+<p>这样可以临时防止程序运行，也可以使用一个 DEBUG 符号常量：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define DEBUG 0</span>
+
+<span class="cp">#if DEBUG</span>
+<span class="w">  </span><span class="c1">// 当 DEBUG 不为 0 时，代码才会被发给编译器</span>
+<span class="cp">#endif</span>
+</code></pre></div>
+<h3 id="_35">你可以使用的预定义的符号常量<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h3>
+<p>预处理器还定义了很多你可以直接使用的符号常量，它们的名字的前后有两个下划线作为标识，包括：</p>
+<ul>
+<li><strong><code>__LINE__</code></strong> 代表源代码文件中的当前行</li>
+<li><strong><code>__FILE__</code></strong> 代表文件的名字</li>
+<li><strong><code>__DATE__</code></strong> 表示编译日期，格式为 <code>Mmm gg aaaa</code></li>
+<li><strong><code>__TIME__</code></strong> 表示编译时间，格式为 <code>hh:mm:ss</code></li>
+</ul>
+<h2 id="_36">结语<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h2>
+<p>非常感谢阅读本手册！</p>
+<p>我希望它将鼓励你去了解更多有关 C 的知识。</p>
+<p>若想查看更多教程，你可以访问我的<a href="https://flaviocopes.com/">博客</a>。</p>
+<p>通过 <a href="mailto:hey@flaviocopes.com">hey@flaviocopes.com</a> 给我发送反馈、勘误或者意见。</p>
+<p>记住：<a href="https://flaviocopes.com/page/c-handbook/">你可以从这里获得这本手册的 PDF 或 ePub 版本</a>。</p>
+<p>你可以在 Twitter <a href="https://twitter.com/flaviocopes">@flaviocopes</a> 联系我。</p>
+<p>原文：<a href="https://www.freecodecamp.org/news/the-c-beginners-handbook/">The C Beginner's Handbook: Learn C Programming Language basics in just a few hours</a>，作者：<a href="https://www.freecodecamp.org/news/author/flavio/">Flavio Copes</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
