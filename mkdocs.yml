@@ -2,28 +2,40 @@ site_name: yzyf1312.github.io
 site_url: https://yzyf1312.github.io/
 theme:
   name: material
+  custom_dir: overrides
 
 markdown_extensions:
-  # Python Markdown
   - toc:
+      # 在标题末尾添加段落符号锚链接
       permalink: true
 
-  # Python Markdown Extensions
+  # 代码高亮
   - pymdownx.highlight
+  
+  # 允许代码块和内容块任意嵌套
   - pymdownx.superfences
 
+  # 渲染块和内联块方程式，并与 MathJax 无缝集成
   - pymdownx.arithmatex:
       generic: true
+  
+  # 高亮文本以及使用简单语法定义上下标
   - pymdownx.caret
   - pymdownx.mark
   - pymdownx.tilde
 
   - pymdownx.tasklist:
-      # custom_checkbox: true
+      # 渲染复选框
       clickable_checkbox: true
-  
+
+  # 内联脚注
   - footnotes
 
 extra_javascript:
+  # MathJax
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+  # lenis
+  - javascripts/lenis.js
+  - https://unpkg.com/lenis@latest/dist/lenis.min.js
